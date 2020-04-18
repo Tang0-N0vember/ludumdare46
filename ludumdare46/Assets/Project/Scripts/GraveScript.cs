@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class GraveScript : MonoBehaviour
 {
-    private bool isOpen = false;
-    
+    [SerializeField]private bool isOpen = false;
+
+    [SerializeField] private GameObject item;
+    private bool itemIsCreated = false;
+    private bool playIsOnGrave = false;
+
     public bool graveState
     {
         get { return isOpen; }
         set { isOpen = value; }
 
+    }
+    public bool playerGraveState
+    {
+        get { return playIsOnGrave; }
+        set { playIsOnGrave = value; }
     }
     // Start is called before the first frame update
     void Start()
@@ -21,9 +30,19 @@ public class GraveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isOpen)
+        if (isOpen&& !itemIsCreated)
         {
-
+            Instantiate(item);
+            itemIsCreated = true;
         }
     }
+    /*
+    public void createItem()
+    {
+        if (isOpen && !itemIsCreated)
+        {
+            Instantiate(item);
+            itemIsCreated = true;
+        }
+    }*/
 }
