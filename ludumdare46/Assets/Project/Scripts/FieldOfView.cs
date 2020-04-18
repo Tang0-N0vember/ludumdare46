@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
+    [SerializeField] private LayerMask layerMask;
     private Mesh mesh;
 
     private void Start()
@@ -34,7 +35,7 @@ public class FieldOfView : MonoBehaviour
         {
             float angleRad = angle * (Mathf.PI / 180f);
             Vector3 vertex; //= origin + new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)) * viewDistance; ;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)), viewDistance);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)), viewDistance, layerMask);
             if(raycastHit2D.collider == null)
             {
                 
@@ -44,6 +45,8 @@ public class FieldOfView : MonoBehaviour
                 Debug.Log("Hit on: ");
                 Debug.Log(raycastHit2D.point);
                 vertex = raycastHit2D.point;
+                //vertex.x = vertex.x - 2;
+                //vertex.y = vertex.y + 2;
             }
 
 
@@ -61,15 +64,6 @@ public class FieldOfView : MonoBehaviour
             vertexIndex++;
             angle -= angleIncrease;
         }
-
-
-
-        /*vertices[1] = new Vector3(5, 0);
-        vertices[2] = new Vector3(0, -5);
-
-        triangles[0] = 0;
-        triangles[1] = 1;
-        triangles[2] = 2;*/
 
         mesh.vertices = vertices;
         mesh.uv = uv;
