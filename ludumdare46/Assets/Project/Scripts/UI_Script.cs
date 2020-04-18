@@ -24,7 +24,7 @@ public class UI_Script : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene(1);
     }
 
     public void ExitGame()
