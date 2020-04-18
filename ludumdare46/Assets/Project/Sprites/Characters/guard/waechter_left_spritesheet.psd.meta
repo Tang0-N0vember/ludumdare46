@@ -1,28 +1,7 @@
 fileFormatVersion: 2
 guid: 432cb34a98063bb4cbfa838c55aea512
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8128171966591015443
-    second: waechter_left_spritesheet_0
-  - first:
-      213: 4754717599139152619
-    second: waechter_left_spritesheet_1
-  - first:
-      213: 6797525802075088825
-    second: waechter_left_spritesheet_2
-  - first:
-      213: -1783540388918491681
-    second: waechter_left_spritesheet_3
-  - first:
-      213: -7879231958421411183
-    second: waechter_left_spritesheet_4
-  - first:
-      213: 5674798104794818708
-    second: waechter_left_spritesheet_5
-  - first:
-      213: 5422325817483258650
-    second: waechter_left_spritesheet_6
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -61,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -91,180 +70,9 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: waechter_left_spritesheet_0
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 190
-        width: 133
-        height: 284
-      alignment: 9
-      pivot: {x: 0.55501765, y: 0.29585943}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9eb0b7f958a3e44cae850feebc51328
-      internalID: 8128171966591015443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waechter_left_spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 321
-        width: 87
-        height: 123
-      alignment: 9
-      pivot: {x: 0.5064697, y: 0.6738956}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be5279a225b85ee48af5cb2d76ba6699
-      internalID: 4754717599139152619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waechter_left_spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 209
-        width: 45
-        height: 73
-      alignment: 9
-      pivot: {x: 0.70013326, y: 0.8469757}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ccbb9d8877dec04a93ff62d7ec61633
-      internalID: 6797525802075088825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waechter_left_spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 159
-        width: 40
-        height: 138
-      alignment: 9
-      pivot: {x: 0.5844307, y: 0.85077566}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85e9c990f61904d4994bb012d6ca5d58
-      internalID: -1783540388918491681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waechter_left_spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 25
-        width: 112
-        height: 128
-      alignment: 9
-      pivot: {x: 0.8769237, y: 0.5263841}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d97e01b4f778e746b8393a7132be0b7
-      internalID: -7879231958421411183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waechter_left_spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 114
-        width: 50
-        height: 72
-      alignment: 9
-      pivot: {x: 0.7364056, y: 0.8127068}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d1c1908296aabb489767c3ae92b4aa5
-      internalID: 5674798104794818708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waechter_left_spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 51
-        width: 113
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 035cfdfdffa6c1d4b99b0aede77e1390
-      internalID: 5422325817483258650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -276,8 +84,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
-  pSDRemoveMatte: 1
-  pSDShowRemoveMatteOption: 1
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
