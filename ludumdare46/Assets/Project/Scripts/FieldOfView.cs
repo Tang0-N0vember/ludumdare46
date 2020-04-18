@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
+    [SerializeField] private LayerMask layerMask;
     private Mesh mesh;
+    private float fov;
+    private float viewDistance;
+    private Vector3 origin;
+    private float startingAngle;
 
     private void Start()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        fov = 90f;
+        viewDistance = 50f;
+        origin = Vector3.zero;
     }
-
-    private void Update()
+    private void LateUpdate()
     {
-        float fov = 90f;
-        Vector3 origin = Vector3.zero;
-        int rayCount = 50;
-        float angle = 0f;
+        int rayCount = 100;
+        float angle = startingAngle;
         float angleIncrease = fov / rayCount;
-        float viewDistance = 10f;
 
         Vector3[] vertices = new Vector3[rayCount + 1 + 1];
         Vector2[] uv = new Vector2[vertices.Length];
@@ -29,27 +33,24 @@ public class FieldOfView : MonoBehaviour
 
         int vertexIndex = 1;
         int triangleIndex = 0;
-
         for (int i = 0; i <= rayCount; i++)
         {
+            Vector3 vertex;
             float angleRad = angle * (Mathf.PI / 180f);
-            Vector3 vertex; //= origin + new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)) * viewDistance; ;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)), viewDistance);
-            if(raycastHit2D.collider == null)
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)), viewDistance, layerMask);
+            if (raycastHit2D.collider == null)
             {
-                
+                // No hit
                 vertex = origin + new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)) * viewDistance;
-            } else
+            }
+            else
             {
-                Debug.Log("Hit on: ");
-                Debug.Log(raycastHit2D.point);
+                // Hit object
                 vertex = raycastHit2D.point;
             }
-
-
             vertices[vertexIndex] = vertex;
 
-            if(i > 0)
+            if (i > 0)
             {
                 triangles[triangleIndex + 0] = 0;
                 triangles[triangleIndex + 1] = vertexIndex - 1;
@@ -63,16 +64,38 @@ public class FieldOfView : MonoBehaviour
         }
 
 
-
-        /*vertices[1] = new Vector3(5, 0);
-        vertices[2] = new Vector3(0, -5);
-
-        triangles[0] = 0;
-        triangles[1] = 1;
-        triangles[2] = 2;*/
-
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        mesh.bounds = new Bounds(origin, Vector3.one * 1000f);
+    }
+
+    public void SetOrigin(Vector3 origin)
+    {
+        this.origin = origin;
+    }
+
+    public void SetAimDirection(Vector3 aimDirection)
+    {
+        startingAngle = GetAngleFromVectorFloat(aimDirection) + fov / 2f;
+    }
+
+    public void SetFoV(float fov)
+    {
+        this.fov = fov;
+    }
+
+    public void SetViewDistance(float viewDistance)
+    {
+        this.viewDistance = viewDistance;
+    }
+
+    public static float GetAngleFromVectorFloat(Vector3 dir)
+    {
+        dir = dir.normalized;
+        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if (n > 0) n += 360;
+
+        return n;
     }
 }
