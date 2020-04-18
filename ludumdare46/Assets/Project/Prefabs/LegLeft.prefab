@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.745283, g: 0.50271446, b: 0.62662935, a: 1}
+  m_Color: {r: 0.5849056, g: 0.32230014, b: 0.22347811, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 202729470979475665}
   - component: {fileID: -2160606180637625693}
   m_Layer: 0
-  m_Name: Item
+  m_Name: LegLeft
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,5 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5a0178750fd0b45b6a142e5659b486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemType: 1
-  statPoints: 0
+  ItemType: 0
+  statPoints: 30

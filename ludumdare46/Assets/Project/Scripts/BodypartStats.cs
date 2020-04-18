@@ -17,6 +17,8 @@ public class BodypartStats : MonoBehaviour
     [SerializeField] private int maxHart=100;
     [SerializeField] private int maxBrain=100;
 
+    private bool isDead = false;
+
     public MyInt ArmLeft, ArmRight, LegLeft, LegRight, Head, Lung, Hart, Brain;
 
     protected float Timer;
@@ -39,27 +41,53 @@ public class BodypartStats : MonoBehaviour
         BodyPartList.Add(Lung = new MyInt(startingBodyPartStat));
         BodyPartList.Add(Hart = new MyInt(startingBodyPartStat));
         BodyPartList.Add(Brain = new MyInt(startingBodyPartStat));
-
-        //foreach (MyInt i in BodyPartList) i.MyIntValue = 75;
     }
     private void Update()
     {
-
-        Timer += Time.deltaTime;
-        if(Timer>=damageTimer)
+        if (!isDead)
         {
-            Timer = 0f;
-            foreach (MyInt i in BodyPartList) i.MyIntValue--;
+            Timer += Time.deltaTime;
+            if (Timer >= damageTimer)
+            {
+                Timer = 0f;
+                foreach (MyInt i in BodyPartList)
+                {
+                    i.MyIntValue--;
+                    Debug.Log(i.MyIntValue);
+                }
+            }
         }
 
 
         foreach (MyInt i in BodyPartList)
         {
+            //nur bei hirn und herz
             if (i.MyIntValue <= 0)
             {
+                isDead = true;
                 Debug.Log("Game Over");
             }
         }
 
+    }
+    public void takeDamage(int damageValue)
+    {
+        foreach (MyInt i in BodyPartList)
+        {
+            i.MyIntValue-=damageValue;
+        }
+    }
+    public bool vipreAttack(int damageValue, int vimpireHealth)
+    {
+        if (gameObject.GetComponent<MonsterStats>().getCurrentAttack >= vimpireHealth)
+        {
+            return true;
+        }
+        else
+        {
+            int randomNum = Random.Range(0, 5);
+            BodyPartList[randomNum].MyIntValue -= damageValue;
+            return false;
+        }
     }
 }

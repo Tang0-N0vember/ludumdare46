@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool keyIsDown = false;
     private bool isGraveNowOpen;
     private bool isGraveOpen;
+    private bool isDiging = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float horizontalMovment = Input.GetAxis("Horizontal");
         float verticalMovment = Input.GetAxis("Vertical");
 
@@ -39,17 +41,22 @@ public class PlayerController : MonoBehaviour
             downTime = Time.time;
             pressTime = downTime + interactTime;
             keyIsDown = true;
+            isDiging = true;
         }
-        if (Input.GetKeyUp(KeyCode.E) && isGrave)
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            if (Time.time < pressTime)
+            if (isGrave)
             {
-                Debug.Log("interacted with grave");
+                if (Time.time < pressTime)
+                {
+                    Debug.Log("interacted with grave");
+                }
             }
+            keyIsDown = false;
         }
-        if (Time.time >= pressTime && keyIsDown)
+        if (Time.time >= pressTime && keyIsDown && isDiging)
         {
-            Debug.Log("dig up grave");
+            Debug.Log("dug up grave");
             isGraveNowOpen = true;
             keyIsDown = false;
         }
@@ -84,6 +91,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("grave left");
             isGrave = false;
+            isDiging = false;
+            isGraveNowOpen = false;
         }
     }
 

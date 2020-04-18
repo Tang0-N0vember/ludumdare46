@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonsterFollow : MonoBehaviour
 {
-    MonsterStats monsterStats;
     [SerializeField] private float followSpeed;
 
     [SerializeField] private Transform player;

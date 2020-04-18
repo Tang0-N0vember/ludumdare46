@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GraveScript : MonoBehaviour
 {
-    [SerializeField]private bool isOpen = false;
+    [SerializeField] private bool isRichGrave = false;
+    [SerializeField] private bool isOpen = false;
     [SerializeField] private bool itemIsCreated = false;
-    [SerializeField]private GameObject player;
-    [SerializeField]private GameObject itempos;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject itempos;
+    [SerializeField] private GameObject monster;
 
     [SerializeField] private GameObject item;
     
@@ -33,12 +35,55 @@ public class GraveScript : MonoBehaviour
     {
         if (isOpen && !itemIsCreated)
         {
-            GameObject newItem = Instantiate(item);
-            newItem.transform.parent = itempos.transform;
-            newItem.transform.position = new Vector3(itempos.transform.position.x, itempos.transform.position.y);
-            
-            itemIsCreated = true;
-            
+            if (isRichGrave)
+            {
+                int randomNum = Random.Range(1, 4);
+                if (randomNum == 1)
+                {
+                    Debug.Log("Rats attack");
+                    int attackValue = Random.Range(10, 30);
+                    Debug.Log("Damage" + attackValue);
+                    monster.GetComponent<BodypartStats>().takeDamage(attackValue);
+
+                    creatItem();
+                }
+                if(randomNum==2)
+                {
+                    Debug.Log("Vimpire attack");
+                    int attackValue = Random.Range(50, 70);
+                    Debug.Log("Damage: " + attackValue);
+                    int vimpireHealth = Random.Range(150, 250);
+                    if (monster.GetComponent<BodypartStats>().vipreAttack(attackValue, vimpireHealth))
+                    {
+                        Debug.Log("Monster won!");
+                        creatItem();
+                    }
+                }
+                if(randomNum == 3)
+                {
+                    creatItem();
+                }
+            }
+            else
+            {
+                if (Random.value >= 0.5)
+                {
+                    Debug.Log("Rats attack");
+                    int attackValue = Random.Range(10, 30);
+                    Debug.Log("Rats attack Value"+attackValue);
+                    monster.GetComponent<BodypartStats>().takeDamage(attackValue);
+                }
+                creatItem();
+
+
+            }
         }
+    }
+    private void creatItem()
+    {
+        GameObject newItem = Instantiate(item);
+        newItem.transform.parent = itempos.transform;
+        newItem.transform.position = new Vector3(itempos.transform.position.x, itempos.transform.position.y);
+        itemIsCreated = true;
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonsterStats : MonoBehaviour
 {
-    BodypartStats bodypartStats;
     [SerializeField] private int maxBrain=200, currentBrain=0;
     [SerializeField] private int maxBlood=200, currentBlood=0;
     [SerializeField] private int maxMovemenet=300, currentMovement=0;
@@ -13,6 +12,10 @@ public class MonsterStats : MonoBehaviour
     public int getCurrentMovement
     {
         get { return currentMovement; }
+    }
+    public int getCurrentAttack
+    {
+        get { return currentAttack; }
     }
 
     private void Start()
