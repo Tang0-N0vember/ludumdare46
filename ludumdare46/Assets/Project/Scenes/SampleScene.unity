@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 51154917}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 815619178}
   m_RootOrder: 0
@@ -189,8 +189,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.33962262, g: 0.011213961, b: 0.042316094, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f906d7f26f8f35e48b100fcaca1d0ad8, type: 3}
+  m_Color: {r: 0.8745099, g: 0.8745099, b: 0.8745099, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 134632129}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,6 +353,7 @@ Transform:
   m_Children:
   - {fileID: 120461001}
   - {fileID: 519420032}
+  - {fileID: 487108731}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -377,6 +378,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &487108730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487108731}
+  m_Layer: 0
+  m_Name: ItemPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487108731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487108730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 134632128}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +515,8 @@ GameObject:
   m_Component:
   - component: {fileID: 815619178}
   - component: {fileID: 815619177}
+  - component: {fileID: 815619179}
+  - component: {fileID: 815619180}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -520,6 +553,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &815619179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815619176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a391d959600df499978e51b7d6624f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBrain: 200
+  currentBrain: 0
+  maxBlood: 200
+  currentBlood: 0
+  maxMovemenet: 300
+  currentMovement: 0
+  maxAttack: 200
+  currentAttack: 0
+--- !u!114 &815619180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815619176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8163f5baf0d749c428f1dcf39d21f729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTimer: 3
+  startingBodyPartStat: 15
+  maxArmLeft: 100
+  maxArmRight: 100
+  maxLegLeft: 100
+  maxLegRight: 100
+  maxHead: 100
+  maxLung: 100
+  maxHart: 100
+  maxBrain: 100
 --- !u!1 &990579125
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +667,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
+  itemIsCreated: 0
+  player: {fileID: 134632125}
+  itempos: {fileID: 487108730}
   item: {fileID: 5922980475055230102, guid: 527e7ed8bb18f2d4ca13d95dd01f4ba6, type: 3}
 --- !u!1 &1099374956
 GameObject:

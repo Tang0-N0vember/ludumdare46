@@ -72,11 +72,11 @@ public class PlayerController : MonoBehaviour
                 //collider.gameObject.GetComponent<GraveScript>().createItem();
             }*/
         }
-        if (collider.gameObject.CompareTag("Item"))
+        /*if (collider.gameObject.CompareTag("Item"))
         {
             Debug.Log("Item picked up");
             Destroy(collider.gameObject);
-        }
+        }*/
     }
     private void OnTriggerExit2D(Collider2D collider)
     {

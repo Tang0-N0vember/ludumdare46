@@ -5,9 +5,12 @@ using UnityEngine;
 public class GraveScript : MonoBehaviour
 {
     [SerializeField]private bool isOpen = false;
+    [SerializeField] private bool itemIsCreated = false;
+    [SerializeField]private GameObject player;
+    [SerializeField]private GameObject itempos;
 
     [SerializeField] private GameObject item;
-    private bool itemIsCreated = false;
+    
     private bool playIsOnGrave = false;
 
     public bool graveState
@@ -21,28 +24,21 @@ public class GraveScript : MonoBehaviour
         get { return playIsOnGrave; }
         set { playIsOnGrave = value; }
     }
-    // Start is called before the first frame update
     void Start()
     {
-        
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //itempos = player.transform.Find("ItemPos").GetComponent<GameObject>();
     }
-
-    // Update is called once per frame
     void Update()
-    {
-        if (isOpen&& !itemIsCreated)
-        {
-            Instantiate(item);
-            itemIsCreated = true;
-        }
-    }
-    /*
-    public void createItem()
     {
         if (isOpen && !itemIsCreated)
         {
-            Instantiate(item);
+            GameObject newItem = Instantiate(item);
+            newItem.transform.parent = itempos.transform;
+            newItem.transform.position = new Vector3(itempos.transform.position.x, itempos.transform.position.y);
+            
             itemIsCreated = true;
+            
         }
-    }*/
+    }
 }
