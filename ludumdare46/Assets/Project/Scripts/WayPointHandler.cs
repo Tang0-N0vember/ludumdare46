@@ -96,6 +96,7 @@ public class WayPointHandler : MonoBehaviour
                 break;
             case State.Idle:
                 EnemyIdle();
+                FindTargetPlayer();
                 break;
         }
         //unitSkeleton.Update(Time.deltaTime);
@@ -124,8 +125,6 @@ public class WayPointHandler : MonoBehaviour
             // Hit Player
         } else
         {
-            currentDetectTimer = detectTimer;
-            state = State.Moving;
             // Hit something else
         }
     }
@@ -217,6 +216,7 @@ public class WayPointHandler : MonoBehaviour
 
         if (currentIdleTimer <= 0f)
         {
+            currentIdleTimer = idleTimer;
             state = State.Moving;
         }
         else state = State.Idle;
