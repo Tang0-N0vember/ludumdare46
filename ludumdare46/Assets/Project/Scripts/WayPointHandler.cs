@@ -51,6 +51,7 @@ public class WayPointHandler : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("It works");
         Transform bodyTransform = transform.Find("Body");
         //unitSkeleton = new V_UnitSkeleton(1f, bodyTransform.TransformPoint, (Mesh mesh) => bodyTransform.GetComponent<MeshFilter>().mesh = mesh);
         //unitAnimation = new V_UnitAnimation(unitSkeleton);
@@ -144,14 +145,34 @@ public class WayPointHandler : MonoBehaviour
                 if (raycastHit2D.collider != null)
                 {
                     // Hit something
-                    if (raycastHit2D.collider.gameObject.GetComponent<PlayerController>() != null) return true;
-                    else return false;
+                    if (raycastHit2D.collider.gameObject.layer == 8) //.GetComponent<PlayerController>() != null)
+                    {
+                        Debug.Log("Player detected");
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log("Kein Player");
+                        return false;
+                    }
                 }
-                else return false;
+                else
+                {
+                    Debug.Log("Keine Collision");
+                    return false;
+                }
             }
-            else return false;
+            else
+            {
+                Debug.Log("Nicht im Field of View");
+                return false;
+            }
         }
-        else return false;
+        else
+        {
+            Debug.Log("Nicht in ViewingDistance");
+            return false;
+        }
     }
 
     public void StartSeeingPlayer()
@@ -165,19 +186,30 @@ public class WayPointHandler : MonoBehaviour
         Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
         lastMoveDir = dirToTarget;
 
-        currentDetectTimer -= Time.deltaTime;
-        //animatedWalker.SetMoveVector(Vector3.zero);
-        if (currentDetectTimer <= 0f)
-        {
-            Debug.Log("WAITING");
-            currentDetectTimer = detectTimer;
-            if (Detected())
+        //if (Detected())
+        //{
+            currentDetectTimer -= Time.deltaTime;
+        Detected();
+            //Debug.Log(Detected().ToString());
+            //Debug.Log(currentDetectTimer.ToString());
+            //animatedWalker.SetMoveVector(Vector3.zero);
+            if (currentDetectTimer <= 0f)
             {
-                state = State.AttackingPlayer;
-            }
-            else state = State.Moving;
 
-        } else state = State.Seeing;
+                currentDetectTimer = detectTimer;
+                if (Detected())
+                {
+                    state = State.AttackingPlayer;
+                }
+                else state = State.Moving;
+
+            }
+            else state = State.Seeing;
+        //}
+        //else state = State.Moving;
+        
+
+        
     }
 
     /*public void StartAttackingPlayer()

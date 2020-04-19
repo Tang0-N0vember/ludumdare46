@@ -294,7 +294,7 @@ PrefabInstance:
     - target: {fileID: 280180011647942237, guid: a9da6709d60c2483b91e0b407702d4f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 280180011647942237, guid: a9da6709d60c2483b91e0b407702d4f2,
         type: 3}
@@ -376,6 +376,35 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 280180011647942179, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: docFront
+      value: 
+      objectReference: {fileID: 6817403602334480391, guid: a055d94f0c30d214099c0cd8e52d1e17,
+        type: 3}
+    - target: {fileID: 280180011647942179, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: docBack
+      value: 
+      objectReference: {fileID: 3017396084135212165, guid: fbde74e807cefc94ca74f9b103b6ce39,
+        type: 3}
+    - target: {fileID: 280180011647942179, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: docLeft
+      value: 
+      objectReference: {fileID: 475345745523082728, guid: c283830700001284eb3e5b792a1c080d,
+        type: 3}
+    - target: {fileID: 280180011647942179, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: docRight
+      value: 
+      objectReference: {fileID: 1406852876849149618, guid: 76d007b5f1e8a1c43aaf1eb57fe2ed8e,
+        type: 3}
+    - target: {fileID: 280180011647942179, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: grave
+      value: 
+      objectReference: {fileID: 1410297326}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9da6709d60c2483b91e0b407702d4f2, type: 3}
 --- !u!1 &1185298970
@@ -389,7 +418,6 @@ GameObject:
   - component: {fileID: 1185298972}
   - component: {fileID: 1185298971}
   - component: {fileID: 1185298973}
-  - component: {fileID: 1185298974}
   m_Layer: 8
   m_Name: Guard (1)
   m_TagString: Untagged
@@ -431,7 +459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185298970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.34, y: 0, z: 0}
+  m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1371025078}
@@ -445,30 +473,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185298970}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bdd5598606aa498a8f921161c186ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fieldOfView: {fileID: 0}
---- !u!114 &1185298974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185298970}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d0b3d29d8dfe4e848df3dd9bff5b26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypointList:
+  - {x: -8, y: 0, z: 0}
   - {x: 8, y: 0, z: 0}
-  - {x: -3, y: 0, z: 0}
   waitTimeList:
-  - 1
-  - 1
+  - 2
+  - 4
   idleAnimation: dZombie_Idle
   walkAnimation: dZombie_Walk
   idleFrameRate: 1
@@ -477,8 +492,8 @@ MonoBehaviour:
   player: {fileID: 1596957839}
   pfFieldOfView: {fileID: 344951373016384909, guid: 9095a2e7a94874266ae47c92de6ab543,
     type: 3}
-  fov: 10
-  viewDistance: 2
+  fov: 90
+  viewDistance: 50
   detectTimer: 20
   attackTimer: 0
 --- !u!1 &1285881524
