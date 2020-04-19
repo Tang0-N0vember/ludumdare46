@@ -6,7 +6,8 @@ using UnityEngine;
 public class WayPointHandler : MonoBehaviour
 {
 
-    private const float speed = 10f;
+    private const float speed = 3f;
+    private const float sprintSpeed = 6f;
 
     [SerializeField] private List<Vector3> waypointList;
     [SerializeField] private List<float> waitTimeList;
@@ -30,6 +31,8 @@ public class WayPointHandler : MonoBehaviour
     [SerializeField] private float detectTimer;
     private float currentDetectTimer;
     [SerializeField] private float attackTimer;
+
+    private int discoveredCount;
 
     //private V_UnitSkeleton unitSkeleton;
     //private V_UnitAnimation unitAnimation;
@@ -65,8 +68,9 @@ public class WayPointHandler : MonoBehaviour
         fieldOfView.SetFoV(fov);
         fieldOfView.SetViewDistance(viewDistance);
 
-        seen = false;
+        //seen = false;
         currentDetectTimer = detectTimer;
+        discoveredCount = 0;
     }
 
     private void Update()
@@ -80,7 +84,6 @@ public class WayPointHandler : MonoBehaviour
                 FindTargetPlayer();
                 break;
             case State.AttackingPlayer:
-                FindTargetPlayer();
                 AttackPlayer();
                 HandleMovement();
                 break;
@@ -114,9 +117,15 @@ public class WayPointHandler : MonoBehaviour
                 if (raycastHit2D.collider != null)
                 {
                     // Hit something
-                    if (raycastHit2D.collider.gameObject.GetComponent<PlayerController>() != null)
+                    if (raycastHit2D.collider.gameObject.layer == 8) //GetComponent<PlayerController>() != null)
                     {
+                        discoveredCount++;
+                        if (discoveredCount >= 3)
+                        {
+                            Debug.Log("GameOver");
+                        }
                         Debug.Log("HIT!");
+                        currentDetectTimer = detectTimer;
                         StartSeeingPlayer();
 
                         // Hit Player
@@ -136,6 +145,8 @@ public class WayPointHandler : MonoBehaviour
     {
         if (Vector3.Distance(GetPosition(), player.transform.position) < viewDistance)
         {
+            Debug.Log("ViewDistance: " + viewDistance);
+            Debug.Log("ActualDistance: " + Vector3.Distance(GetPosition(), player.transform.position));
             // Player inside viewDistance
             Vector3 dirToPlayer = (player.transform.position - GetPosition()).normalized;
             if (Vector3.Angle(GetAimDir(), dirToPlayer) < fov / 2f)
@@ -147,30 +158,31 @@ public class WayPointHandler : MonoBehaviour
                     // Hit something
                     if (raycastHit2D.collider.gameObject.layer == 8) //.GetComponent<PlayerController>() != null)
                     {
-                        Debug.Log("Player detected");
+                        //if(raycastHit2D.point )
+                        //Debug.Log("Player detected");
                         return true;
                     }
                     else
                     {
-                        Debug.Log("Kein Player");
+                        //Debug.Log("Kein Player");
                         return false;
                     }
                 }
                 else
                 {
-                    Debug.Log("Keine Collision");
+                    //Debug.Log("Keine Collision");
                     return false;
                 }
             }
             else
             {
-                Debug.Log("Nicht im Field of View");
+                //Debug.Log("Nicht im Field of View");
                 return false;
             }
         }
         else
         {
-            Debug.Log("Nicht in ViewingDistance");
+            //Debug.Log("Nicht in ViewingDistance");
             return false;
         }
     }
@@ -186,30 +198,32 @@ public class WayPointHandler : MonoBehaviour
         Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
         lastMoveDir = dirToTarget;
 
-        //if (Detected())
-        //{
+        if (Detected())
+        {
             currentDetectTimer -= Time.deltaTime;
-        Detected();
+            //Detected();
             //Debug.Log(Detected().ToString());
             //Debug.Log(currentDetectTimer.ToString());
             //animatedWalker.SetMoveVector(Vector3.zero);
             if (currentDetectTimer <= 0f)
             {
 
-                currentDetectTimer = detectTimer;
                 if (Detected())
                 {
                     state = State.AttackingPlayer;
                 }
-                else state = State.Moving;
-
+                else
+                {
+                    currentDetectTimer = detectTimer;
+                    state = State.Waiting;
+                }
             }
             else state = State.Seeing;
-        //}
-        //else state = State.Moving;
-        
+        }
+        else state = State.Waiting;
 
-        
+
+
     }
 
     /*public void StartAttackingPlayer()
@@ -225,7 +239,7 @@ public class WayPointHandler : MonoBehaviour
         Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
         lastMoveDir = dirToTarget;*/
 
-        
+
 
         if (Detected())
         {
@@ -293,13 +307,14 @@ public class WayPointHandler : MonoBehaviour
 
                 float distanceBefore2 = Vector3.Distance(transform.position, targetPosition);
                 //animatedWalker.SetMoveVector(waypointDir);
-                transform.position = transform.position + dirToTarget * speed * Time.deltaTime;
+                transform.position = transform.position + dirToTarget * sprintSpeed * Time.deltaTime;
                 float distanceAfter2 = Vector3.Distance(transform.position, targetPosition);
 
                 float arriveDistance2 = .1f;
                 if (distanceAfter2 < arriveDistance2 || distanceBefore2 <= distanceAfter2)
                 {
                     //Dead
+                    Debug.Log("Dead");
                 }
                 break;
         }

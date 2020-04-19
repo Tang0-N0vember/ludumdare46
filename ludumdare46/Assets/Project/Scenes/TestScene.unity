@@ -212,15 +212,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grav_version0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 553187030145740551, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 553187030145740549, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.85
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 553187030145740549, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.63
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 553187030145740549, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b,
         type: 3}
@@ -266,6 +271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 553187029108728616, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b, type: 3}
@@ -418,7 +428,8 @@ GameObject:
   - component: {fileID: 1185298972}
   - component: {fileID: 1185298971}
   - component: {fileID: 1185298973}
-  m_Layer: 8
+  - component: {fileID: 1185298974}
+  m_Layer: 0
   m_Name: Guard (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,6 +506,36 @@ MonoBehaviour:
   fov: 90
   viewDistance: 50
   detectTimer: 20
+  attackTimer: 0
+--- !u!114 &1185298974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185298970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b05d36500775ce4797802169e812ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypointList:
+  - {x: -8, y: 0, z: 0}
+  - {x: 8, y: 0, z: 0}
+  waitTimeList:
+  - 2
+  - 3
+  idleAnimation: dZombie_Idle
+  walkAnimation: dZombie_Walk
+  idleFrameRate: 1
+  walkFrameRate: 1
+  aimDirection: {x: 0, y: 0, z: 0}
+  player: {fileID: 1596957839}
+  pfFieldOfView: {fileID: 344951373016384909, guid: 9095a2e7a94874266ae47c92de6ab543,
+    type: 3}
+  fov: 50
+  viewDistance: 15
+  detectTimer: 4
   attackTimer: 0
 --- !u!1 &1285881524
 GameObject:
@@ -608,7 +649,7 @@ GameObject:
   - component: {fileID: 1371025078}
   - component: {fileID: 1371025080}
   - component: {fileID: 1371025079}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
