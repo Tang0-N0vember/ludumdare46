@@ -13,8 +13,8 @@ public class WayPointHandler : MonoBehaviour
     [SerializeField] private List<float> waitTimeList;
     private int waypointIndex;
 
-    [SerializeField] private string idleAnimation = "dZombie_Idle";
-    [SerializeField] private string walkAnimation = "dZombie_Walk";
+    //[SerializeField] private string idleAnimation = "dZombie_Idle";
+    //[SerializeField] private string walkAnimation = "dZombie_Walk";
 
     [SerializeField] private float idleFrameRate = 1f;
     [SerializeField] private float walkFrameRate = 1f;
