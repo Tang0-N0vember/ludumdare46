@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: a8e1c0cdc8f91d54eb3400bd1991d9ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -998980835317715665
+    second: doctor_front_spritesheet_0
+  - first:
+      213: 3762874656172433416
+    second: doctor_front_spritesheet_1
+  - first:
+      213: 5111580905287748527
+    second: doctor_front_spritesheet_2
+  - first:
+      213: -3221754734820626106
+    second: doctor_front_spritesheet_3
+  - first:
+      213: -4398777369463630583
+    second: doctor_front_spritesheet_4
+  - first:
+      213: -3975566477008034856
+    second: doctor_front_spritesheet_5
+  - first:
+      213: -1211167222986446914
+    second: doctor_front_spritesheet_6
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: doctor_front_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 231
+        width: 360
+        height: 312
+      alignment: 9
+      pivot: {x: 0.5119954, y: 0.1421138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e141aeacc6b00e949808bc0988795813
+      internalID: -998980835317715665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_front_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 383
+        width: 101
+        height: 135
+      alignment: 9
+      pivot: {x: 0.8970207, y: 0.87928444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e17f6fa25657b42a5173d52659e916
+      internalID: 3762874656172433416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_front_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 210
+        width: 129
+        height: 139
+      alignment: 9
+      pivot: {x: 0.48565295, y: 0.2248321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50abe2d630d07a4ca89bfb2252e3395
+      internalID: 5111580905287748527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_front_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 59
+        width: 434
+        height: 147
+      alignment: 9
+      pivot: {x: 0.69047415, y: 0.84832263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441b936f45d9ef4469a7f0a9030be6cb
+      internalID: -3221754734820626106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_front_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 125
+        width: 55
+        height: 74
+      alignment: 9
+      pivot: {x: 0.32053557, y: 0.8167906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada02686b02408c4ea6044764aacc105
+      internalID: -4398777369463630583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_front_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 12
+        width: 264
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94045bd724448242bfb886eb61124b1
+      internalID: -3975566477008034856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_front_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 26
+        width: 56
+        height: 74
+      alignment: 9
+      pivot: {x: 0.6762597, y: 0.81679094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538fe2e7cbf302d4489f1aacda7e1acf
+      internalID: -1211167222986446914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
