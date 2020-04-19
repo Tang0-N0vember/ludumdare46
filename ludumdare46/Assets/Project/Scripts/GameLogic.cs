@@ -26,6 +26,11 @@ public class GameLogic : MonoBehaviour
             currentGameTimer = gameTimer;
 
         }
+
+        /*if(player.GetDetectedScore() >= 3)
+        {
+            GameOver();
+        }*/
     }
 
     public void GameOver()

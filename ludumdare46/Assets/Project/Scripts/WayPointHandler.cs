@@ -16,8 +16,8 @@ public class WayPointHandler : MonoBehaviour
     //[SerializeField] private string idleAnimation = "dZombie_Idle";
     //[SerializeField] private string walkAnimation = "dZombie_Walk";
 
-    [SerializeField] private float idleFrameRate = 1f;
-    [SerializeField] private float walkFrameRate = 1f;
+    //[SerializeField] private float idleFrameRate = 1f;
+    //[SerializeField] private float walkFrameRate = 1f;
     [SerializeField] private Vector3 aimDirection;
 
     [SerializeField] private PlayerController player;
@@ -34,6 +34,12 @@ public class WayPointHandler : MonoBehaviour
     private float currentIdleTimer;
 
     private int discoveredCount;
+
+    [SerializeField] private GameObject guardFront;
+    [SerializeField] private GameObject guardBack;
+    [SerializeField] private GameObject guardLeft;
+    [SerializeField] private GameObject guardRight;
+
 
     //private V_UnitSkeleton unitSkeleton;
     //private V_UnitAnimation unitAnimation;
