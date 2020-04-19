@@ -161,7 +161,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5410266599302211753
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -457,15 +457,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 475345745115337750, guid: c283830700001284eb3e5b792a1c080d,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 475345744118203294, guid: c283830700001284eb3e5b792a1c080d,
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475345745115337750, guid: c283830700001284eb3e5b792a1c080d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c283830700001284eb3e5b792a1c080d, type: 3}
@@ -553,15 +553,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1406852876129785818, guid: 76d007b5f1e8a1c43aaf1eb57fe2ed8e,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1406852875506750717, guid: 76d007b5f1e8a1c43aaf1eb57fe2ed8e,
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406852876129785818, guid: 76d007b5f1e8a1c43aaf1eb57fe2ed8e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d007b5f1e8a1c43aaf1eb57fe2ed8e, type: 3}

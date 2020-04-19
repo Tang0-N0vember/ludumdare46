@@ -62,6 +62,11 @@ public class WayPointHandler : MonoBehaviour
 
     private void Start()
     {
+        guardFront.SetActive(true);
+        guardBack.SetActive(false);
+        guardLeft.SetActive(false);
+        guardRight.SetActive(false);
+
         Debug.Log("It works");
         Transform bodyTransform = transform.Find("Body");
         //unitSkeleton = new V_UnitSkeleton(1f, bodyTransform.TransformPoint, (Mesh mesh) => bodyTransform.GetComponent<MeshFilter>().mesh = mesh);
@@ -287,6 +292,8 @@ public class WayPointHandler : MonoBehaviour
 
                 Vector3 waypointDir = (waypoint - transform.position).normalized;
                 lastMoveDir = waypointDir;
+                Debug.Log(lastMoveDir);
+                HandleAnimation();
 
                 float distanceBefore = Vector3.Distance(transform.position, waypoint);
                 //animatedWalker.SetMoveVector(waypointDir);
@@ -306,6 +313,8 @@ public class WayPointHandler : MonoBehaviour
                 Vector3 targetPosition = player.transform.position;
                 Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
                 lastMoveDir = dirToTarget;
+                Debug.Log(lastMoveDir);
+                HandleAnimation();
 
                 float distanceBefore2 = Vector3.Distance(transform.position, targetPosition);
                 //animatedWalker.SetMoveVector(waypointDir);
@@ -319,6 +328,35 @@ public class WayPointHandler : MonoBehaviour
                     Debug.Log("Dead");
                 }
                 break;
+        }
+    }
+
+    private void HandleAnimation()
+    {
+        if(lastMoveDir.x >= 1.0)
+        {
+            guardRight.SetActive(true);
+            guardBack.SetActive(false);
+            guardFront.SetActive(false);
+            guardLeft.SetActive(false);
+        } else if(lastMoveDir.x <= -1.0)
+        {
+            guardLeft.SetActive(true);
+            guardFront.SetActive(false);
+            guardBack.SetActive(false);
+            guardRight.SetActive(false);
+        } else if(lastMoveDir.y >= 1.0)
+        {
+            guardBack.SetActive(true);
+            guardLeft.SetActive(false);
+            guardRight.SetActive(false);
+            guardFront.SetActive(false);
+        } else if(lastMoveDir.y <= -1.0)
+        {
+            guardFront.SetActive(true);
+            guardBack.SetActive(false);
+            guardLeft.SetActive(false);
+            guardRight.SetActive(false);
         }
     }
 
