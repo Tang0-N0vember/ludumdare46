@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour
     private bool isGraveOpen;
     private bool isDiging = false;
 
+    [Header("Doc Direction")]
+    [SerializeField] private GameObject docFront;
+    [SerializeField] private GameObject docBack;
+    [SerializeField] private GameObject docLeft;
+    [SerializeField] private GameObject docRight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +36,90 @@ public class PlayerController : MonoBehaviour
         if (verticalMovment > 0 || verticalMovment < 0)
         {
             transform.position += transform.up * verticalMovment * movmentSpeed * Time.deltaTime;
+
         }
         if (horizontalMovment > 0 || horizontalMovment < 0)
         {
+            
             transform.position += transform.right * horizontalMovment * movmentSpeed * Time.deltaTime;
+        }
+        if (verticalMovment > 0)
+        {
+            
+            if (horizontalMovment > 0 || horizontalMovment < 0)
+            {
+                docFront.SetActive(false);
+                docBack.SetActive(false);
+            }
+            else
+            {
+                docFront.SetActive(false);
+                docBack.SetActive(true);
+                docLeft.SetActive(false);
+                docRight.SetActive(false);
+            }
+        }
+        if (verticalMovment < 0)
+        {
+            docFront.GetComponent<Animator>().SetBool("gehen", true);
+            if (horizontalMovment > 0 || horizontalMovment < 0)
+            {
+                docFront.SetActive(false);
+                docBack.SetActive(false);
+            }
+            else
+            {
+                docFront.SetActive(true);
+                docBack.SetActive(false);
+                docLeft.SetActive(false);
+                docRight.SetActive(false);
+            }
+        }
+        if (horizontalMovment > 0)
+        {
+            if (verticalMovment > 0|| verticalMovment<0)
+            {
+                docFront.SetActive(false);
+                docBack.SetActive(false);
+                docLeft.SetActive(false);
+                docRight.SetActive(true);
+            }
+            docFront.SetActive(false);
+            docBack.SetActive(false);
+            docLeft.SetActive(false);
+            docRight.SetActive(true);
+        }
+        if (horizontalMovment < 0)
+        {
+            if (verticalMovment > 0 || verticalMovment < 0)
+            {
+                docFront.SetActive(false);
+                docBack.SetActive(false);
+                docLeft.SetActive(true);
+                docRight.SetActive(false);
+            }
+            docFront.SetActive(false);
+            docBack.SetActive(false);
+            docLeft.SetActive(true);
+            docRight.SetActive(false);
+        }
+        if (horizontalMovment == 0 && verticalMovment == 0)
+        {
+            docFront.GetComponent<Animator>().SetBool("gehen", false);
+            docFront.SetActive(true);
+            docBack.SetActive(false);
+            docLeft.SetActive(false);
+            docRight.SetActive(false);
+        }
+        if (horizontalMovment == 0 && verticalMovment != 0)
+        {
+            docLeft.SetActive(false);
+            docRight.SetActive(false);
+        }
+        if (horizontalMovment != 0 && verticalMovment == 0)
+        {
+            docFront.SetActive(false);
+            docBack.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.E) && isGrave && !isGraveOpen)
@@ -42,6 +128,7 @@ public class PlayerController : MonoBehaviour
             pressTime = downTime + interactTime;
             keyIsDown = true;
             isDiging = true;
+            docFront.GetComponent<Animator>().SetBool("graben", true);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
@@ -59,6 +146,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("dug up grave");
             isGraveNowOpen = true;
             keyIsDown = false;
+            docFront.GetComponent<Animator>().SetBool("graben", false);
         }
         if (isGraveNowOpen)
         {
