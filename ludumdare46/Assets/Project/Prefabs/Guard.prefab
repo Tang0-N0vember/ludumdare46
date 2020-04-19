@@ -108,7 +108,7 @@ MonoBehaviour:
   pfFieldOfView: {fileID: 344951373016384909, guid: 9095a2e7a94874266ae47c92de6ab543,
     type: 3}
   fov: 70
-  viewDistance: 5
+  viewDistance: 10
   detectTimer: 3
   idleTimer: 3
   guardFront: {fileID: 2954562151297351382}
