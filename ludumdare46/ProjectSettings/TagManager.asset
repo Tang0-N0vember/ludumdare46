@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grave
   - Item
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2376703975
+    locked: 0
+  - name: Grave
+    uniqueID: 688458123
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
