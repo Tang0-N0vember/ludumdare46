@@ -280,35 +280,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 8547280078671101067, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 8
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 117058138}
+    - target: {fileID: 8547280078671101067, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 8547280079292115286, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 117058138}
+    - target: {fileID: 8547280079292115286, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_text
-      value: FAILURE!
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
       objectReference: {fileID: 0}
     - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
@@ -361,15 +351,55 @@ PrefabInstance:
       propertyPath: m_textAlignment
       value: 520
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280078671101067, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 117058138}
-    - target: {fileID: 8547280078671101067, guid: f01145ac0e1be4e33838523eac674726,
+      propertyPath: m_textInfo.characterCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280079722707416, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_text
+      value: FAILURE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8547280079213040155, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
@@ -391,35 +421,40 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280079292115286, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 1188669857991779426, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 117058138}
-    - target: {fileID: 8547280079292115286, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitGame
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 8731934266637872728, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_textInfo.characterCount
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 5881757684990534992, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
+      propertyPath: m_AnchorMax.x
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 5881757684990534992, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280078814680182, guid: f01145ac0e1be4e33838523eac674726,
+    - target: {fileID: 6986779553453198490, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986779553453198490, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986779553453198490, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01145ac0e1be4e33838523eac674726, type: 3}
