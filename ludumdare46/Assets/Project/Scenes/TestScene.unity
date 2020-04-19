@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 553187030145740549, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.63
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 553187030145740549, guid: cb4fcd4b260e44dbe8f5b6cc3ce57e7b,
         type: 3}
@@ -296,15 +296,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 280180011647942176, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 280180011647942176, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 280180011647942237, guid: a9da6709d60c2483b91e0b407702d4f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.51
       objectReference: {fileID: 0}
     - target: {fileID: 280180011647942237, guid: a9da6709d60c2483b91e0b407702d4f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.06
+      value: -5.34
       objectReference: {fileID: 0}
     - target: {fileID: 280180011647942237, guid: a9da6709d60c2483b91e0b407702d4f2,
         type: 3}
@@ -415,6 +425,11 @@ PrefabInstance:
       propertyPath: grave
       value: 
       objectReference: {fileID: 1410297326}
+    - target: {fileID: 280180011647942178, guid: a9da6709d60c2483b91e0b407702d4f2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9da6709d60c2483b91e0b407702d4f2, type: 3}
 --- !u!1 &1185298970
@@ -427,9 +442,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1185298972}
   - component: {fileID: 1185298971}
-  - component: {fileID: 1185298973}
   - component: {fileID: 1185298974}
-  m_Layer: 0
+  - component: {fileID: 1185298973}
+  m_Layer: 2
   m_Name: Guard (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,27 +501,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185298970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d0b3d29d8dfe4e848df3dd9bff5b26f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bdd5598606aa498a8f921161c186ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointList:
-  - {x: -8, y: 0, z: 0}
-  - {x: 8, y: 0, z: 0}
-  waitTimeList:
-  - 2
-  - 4
-  idleAnimation: dZombie_Idle
-  walkAnimation: dZombie_Walk
-  idleFrameRate: 1
-  walkFrameRate: 1
-  aimDirection: {x: 0, y: 0, z: 0}
-  player: {fileID: 1596957839}
-  pfFieldOfView: {fileID: 344951373016384909, guid: 9095a2e7a94874266ae47c92de6ab543,
+  fieldOfView: {fileID: 344951373016384910, guid: 9095a2e7a94874266ae47c92de6ab543,
     type: 3}
-  fov: 90
-  viewDistance: 50
-  detectTimer: 20
-  attackTimer: 0
 --- !u!114 &1185298974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +535,7 @@ MonoBehaviour:
   fov: 50
   viewDistance: 15
   detectTimer: 4
-  attackTimer: 0
+  idleTimer: 4
 --- !u!1 &1285881524
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +648,7 @@ GameObject:
   - component: {fileID: 1371025078}
   - component: {fileID: 1371025080}
   - component: {fileID: 1371025079}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

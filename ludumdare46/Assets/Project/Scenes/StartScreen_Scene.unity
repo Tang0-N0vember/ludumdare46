@@ -439,5 +439,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1287177517}
+    - target: {fileID: 8547280079752540676, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280079752540679, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547280079752540679, guid: f01145ac0e1be4e33838523eac674726,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01145ac0e1be4e33838523eac674726, type: 3}
