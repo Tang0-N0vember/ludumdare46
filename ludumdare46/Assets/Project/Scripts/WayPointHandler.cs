@@ -84,8 +84,8 @@ public class WayPointHandler : MonoBehaviour
                 FindTargetPlayer();
                 break;
             case State.AttackingPlayer:
-                AttackPlayer();
                 HandleMovement();
+                AttackPlayer();
                 break;
             case State.Busy:
                 break;
@@ -117,7 +117,9 @@ public class WayPointHandler : MonoBehaviour
                 if (raycastHit2D.collider != null)
                 {
                     // Hit something
-                    if (raycastHit2D.collider.gameObject.layer == 8) //GetComponent<PlayerController>() != null)
+                    Debug.Log(raycastHit2D.collider.gameObject.GetComponent<PlayerController>());
+                    Debug.Log(raycastHit2D.collider.gameObject.layer);
+                    if (raycastHit2D.collider.gameObject.tag == "Player") //transform.GetComponent<PlayerController>() != null)
                     {
                         discoveredCount++;
                         if (discoveredCount >= 3)
@@ -156,7 +158,7 @@ public class WayPointHandler : MonoBehaviour
                 if (raycastHit2D.collider != null)
                 {
                     // Hit something
-                    if (raycastHit2D.collider.gameObject.layer == 8) //.GetComponent<PlayerController>() != null)
+                    if (raycastHit2D.collider.gameObject.tag == "Player") //GetComponent<PlayerController>() != null)
                     {
                         //if(raycastHit2D.point )
                         //Debug.Log("Player detected");
