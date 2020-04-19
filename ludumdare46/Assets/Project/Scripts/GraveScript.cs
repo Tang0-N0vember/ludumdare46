@@ -39,7 +39,8 @@ public class GraveScript : MonoBehaviour
     }
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player");
+        monster = GameObject.FindGameObjectWithTag("Monster");
+        itempos = GameObject.FindGameObjectWithTag("ItemPos");
         //itempos = player.transform.Find("ItemPos").GetComponent<GameObject>();
     }
     void Update()
