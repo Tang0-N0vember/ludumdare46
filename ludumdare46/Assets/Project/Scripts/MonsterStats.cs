@@ -17,6 +17,14 @@ public class MonsterStats : MonoBehaviour
     {
         get { return currentAttack; }
     }
+    public int getCurrentBlood
+    {
+        get { return currentBlood; }
+    }
+    public int getCurrentBrain
+    {
+        get { return currentBrain; }
+    }
 
     private void Start()
     {
