@@ -106,7 +106,26 @@ public class WayPointHandler : MonoBehaviour
 
     private void FindTargetPlayer()
     {
-        if (Vector3.Distance(GetPosition(), player.transform.position) < viewDistance)
+        if(Detected())
+        {
+            discoveredCount++;
+            if (discoveredCount >= 3)
+            {
+                Debug.Log("GameOver");
+            }
+            Debug.Log("HIT!");
+            currentDetectTimer = detectTimer;
+            StartSeeingPlayer();
+
+            // Hit Player
+        } else
+        {
+            currentDetectTimer = detectTimer;
+            state = State.Moving;
+            // Hit something else
+        }
+
+        /*if (Vector3.Distance(GetPosition(), player.transform.position) < viewDistance)
         {
             // Player inside viewDistance
             Vector3 dirToPlayer = (player.transform.position - GetPosition()).normalized;
@@ -119,36 +138,25 @@ public class WayPointHandler : MonoBehaviour
                     // Hit something
                     Debug.Log(raycastHit2D.collider.gameObject.GetComponent<PlayerController>());
                     Debug.Log(raycastHit2D.collider.gameObject.layer);
-                    if (raycastHit2D.collider.gameObject.tag == "Player") //transform.GetComponent<PlayerController>() != null)
+                    if (raycastHit2D.collider.gameObject.transform.tag == "Player") //transform.GetComponent<PlayerController>() != null)
                     {
-                        discoveredCount++;
-                        if (discoveredCount >= 3)
-                        {
-                            Debug.Log("GameOver");
-                        }
-                        Debug.Log("HIT!");
-                        currentDetectTimer = detectTimer;
-                        StartSeeingPlayer();
-
-                        // Hit Player
+                        
                     }
                     else
                     {
-                        currentDetectTimer = detectTimer;
-                        state = State.Moving;
-                        // Hit something else
+
                     }
                 }
             }
-        }
+        }*/
     }
 
     private bool Detected()
     {
         if (Vector3.Distance(GetPosition(), player.transform.position) < viewDistance)
         {
-            Debug.Log("ViewDistance: " + viewDistance);
-            Debug.Log("ActualDistance: " + Vector3.Distance(GetPosition(), player.transform.position));
+            //Debug.Log("ViewDistance: " + viewDistance);
+            //Debug.Log("ActualDistance: " + Vector3.Distance(GetPosition(), player.transform.position));
             // Player inside viewDistance
             Vector3 dirToPlayer = (player.transform.position - GetPosition()).normalized;
             if (Vector3.Angle(GetAimDir(), dirToPlayer) < fov / 2f)
@@ -158,7 +166,7 @@ public class WayPointHandler : MonoBehaviour
                 if (raycastHit2D.collider != null)
                 {
                     // Hit something
-                    if (raycastHit2D.collider.gameObject.tag == "Player") //GetComponent<PlayerController>() != null)
+                    if (raycastHit2D.collider.gameObject.transform.tag == "Player") //GetComponent<PlayerController>() != null)
                     {
                         //if(raycastHit2D.point )
                         //Debug.Log("Player detected");
