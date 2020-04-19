@@ -444,70 +444,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.8
       objectReference: {fileID: 0}
-    - target: {fileID: 8547280079752540676, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.4649658
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935648, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935648, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 441.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935648, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 7.325012
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 12.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 12.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_text
-      value: "Last night the doctor made a terrible mistake... \n\nHe wanted to create
-        himself a powerful companion, but instead he only resurrected the foul flesh
-        of the undead. \nNow he wants to find the source of eternal youth to overcome
-        the merciless passage of time and the unavoidable rotting coming with it.
-        \n\nIf only he could stop his companion from needing new limbs..."
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 362
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547280079038935651, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 66
-      objectReference: {fileID: 0}
     - target: {fileID: 8547280079752540679, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -516,20 +452,6 @@ PrefabInstance:
     - target: {fileID: 8547280079752540679, guid: f01145ac0e1be4e33838523eac674726,
         type: 3}
       propertyPath: m_PreserveAspect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5993500008511629498, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -3.899994
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037549104473610, guid: f01145ac0e1be4e33838523eac674726, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665257256363843800, guid: f01145ac0e1be4e33838523eac674726,
-        type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
