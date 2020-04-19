@@ -94,10 +94,12 @@ public class WayPointHandler : MonoBehaviour
             case State.Waiting:
             case State.Moving:
                 HandleMovement();
+                HandleAnimation();
                 FindTargetPlayer();
                 break;
             case State.AttackingPlayer:
                 HandleMovement();
+                HandleAnimation();
                 AttackPlayer();
                 break;
             case State.Busy:
@@ -292,8 +294,9 @@ public class WayPointHandler : MonoBehaviour
 
                 Vector3 waypointDir = (waypoint - transform.position).normalized;
                 lastMoveDir = waypointDir;
-                Debug.Log(lastMoveDir);
-                HandleAnimation();
+                //Debug.Log(waypoint);
+                //Debug.Log(lastMoveDir);
+                //HandleAnimation();
 
                 float distanceBefore = Vector3.Distance(transform.position, waypoint);
                 //animatedWalker.SetMoveVector(waypointDir);
@@ -313,8 +316,8 @@ public class WayPointHandler : MonoBehaviour
                 Vector3 targetPosition = player.transform.position;
                 Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
                 lastMoveDir = dirToTarget;
-                Debug.Log(lastMoveDir);
-                HandleAnimation();
+                //Debug.Log(lastMoveDir);
+                //HandleAnimation();
 
                 float distanceBefore2 = Vector3.Distance(transform.position, targetPosition);
                 //animatedWalker.SetMoveVector(waypointDir);
@@ -333,31 +336,60 @@ public class WayPointHandler : MonoBehaviour
 
     private void HandleAnimation()
     {
-        if(lastMoveDir.x >= 1.0)
+        Vector3 rechts = new Vector3(1.0f, 0.0f, 0.0f);
+        rechts = rechts.normalized;
+        Debug.Log("Rechts");
+        Debug.Log(rechts);
+        Debug.Log("LastMove");
+        Debug.Log(lastMoveDir);
+        /*Debug.Log("X: ");
+        Debug.Log(lastMoveDir.normalized.x);
+        Debug.Log("Y: ");
+        Debug.Log(lastMoveDir.normalized.y);*/
+
+        if(lastMoveDir == rechts)
         {
-            guardRight.SetActive(true);
-            guardBack.SetActive(false);
-            guardFront.SetActive(false);
-            guardLeft.SetActive(false);
-        } else if(lastMoveDir.x <= -1.0)
-        {
-            guardLeft.SetActive(true);
-            guardFront.SetActive(false);
-            guardBack.SetActive(false);
-            guardRight.SetActive(false);
-        } else if(lastMoveDir.y >= 1.0)
-        {
-            guardBack.SetActive(true);
-            guardLeft.SetActive(false);
-            guardRight.SetActive(false);
-            guardFront.SetActive(false);
-        } else if(lastMoveDir.y <= -1.0)
-        {
-            guardFront.SetActive(true);
-            guardBack.SetActive(false);
-            guardLeft.SetActive(false);
-            guardRight.SetActive(false);
+            Debug.Log("rechts gehen");
         }
+
+        /*if (lastMoveDir.normalized.y == 0.0)
+        {
+            if (lastMoveDir.normalized.x > 0.0)
+            {
+                //Debug.Log("rechts");
+                guardRight.SetActive(true);
+                guardBack.SetActive(false);
+                guardFront.SetActive(false);
+                guardLeft.SetActive(false);
+            }
+            else if (lastMoveDir.normalized.x < 0.0)
+            {
+                //Debug.Log("links");
+                guardLeft.SetActive(true);
+                guardFront.SetActive(false);
+                guardBack.SetActive(false);
+                guardRight.SetActive(false);
+            }
+        } else if(lastMoveDir.normalized.x == 0.0)
+        {
+            if (lastMoveDir.normalized.y > 0.0)
+            {
+                //Debug.Log("rauf");
+                guardBack.SetActive(true);
+                guardLeft.SetActive(false);
+                guardRight.SetActive(false);
+                guardFront.SetActive(false);
+            }
+            else if (lastMoveDir.normalized.y < 0.0)
+            {
+                //Debug.Log("runter");
+                guardFront.SetActive(true);
+                guardBack.SetActive(false);
+                guardLeft.SetActive(false);
+                guardRight.SetActive(false);
+            }
+        }*/
+         
     }
 
     public Vector3 GetPosition()
