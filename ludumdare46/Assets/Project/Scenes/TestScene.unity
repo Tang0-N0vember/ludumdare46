@@ -467,8 +467,8 @@ MonoBehaviour:
   - {x: 8, y: 0, z: 0}
   - {x: -3, y: 0, z: 0}
   waitTimeList:
-  - 3
-  - 3
+  - 1
+  - 1
   idleAnimation: dZombie_Idle
   walkAnimation: dZombie_Walk
   idleFrameRate: 1
@@ -477,8 +477,10 @@ MonoBehaviour:
   player: {fileID: 1596957839}
   pfFieldOfView: {fileID: 344951373016384909, guid: 9095a2e7a94874266ae47c92de6ab543,
     type: 3}
-  fov: 50
-  viewDistance: 10
+  fov: 10
+  viewDistance: 2
+  detectTimer: 20
+  attackTimer: 0
 --- !u!1 &1285881524
 GameObject:
   m_ObjectHideFlags: 0
