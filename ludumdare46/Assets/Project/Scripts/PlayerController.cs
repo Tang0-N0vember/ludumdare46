@@ -33,95 +33,98 @@ public class PlayerController : MonoBehaviour
         float horizontalMovment = Input.GetAxis("Horizontal");
         float verticalMovment = Input.GetAxis("Vertical");
 
-        if (verticalMovment > 0 || verticalMovment < 0)
+        if (!isDiging)
         {
-            transform.position += transform.up * verticalMovment * movmentSpeed * Time.deltaTime;
+            docFront.GetComponent<Animator>().SetBool("graben", false);
+            if (verticalMovment > 0 || verticalMovment < 0)
+            {
+                transform.position += transform.up * verticalMovment * movmentSpeed * Time.deltaTime;
 
-        }
-        if (horizontalMovment > 0 || horizontalMovment < 0)
-        {
-            
-            transform.position += transform.right * horizontalMovment * movmentSpeed * Time.deltaTime;
-        }
-        if (verticalMovment > 0)
-        {
-            
+            }
             if (horizontalMovment > 0 || horizontalMovment < 0)
             {
-                docFront.SetActive(false);
-                docBack.SetActive(false);
+
+                transform.position += transform.right * horizontalMovment * movmentSpeed * Time.deltaTime;
             }
-            else
+            if (verticalMovment > 0)
             {
-                docFront.SetActive(false);
-                docBack.SetActive(true);
-                docLeft.SetActive(false);
-                docRight.SetActive(false);
+
+                if (horizontalMovment > 0 || horizontalMovment < 0)
+                {
+                    docFront.SetActive(false);
+                    docBack.SetActive(false);
+                }
+                else
+                {
+                    docFront.SetActive(false);
+                    docBack.SetActive(true);
+                    docLeft.SetActive(false);
+                    docRight.SetActive(false);
+                }
             }
-        }
-        if (verticalMovment < 0)
-        {
-            docFront.GetComponent<Animator>().SetBool("gehen", true);
-            if (horizontalMovment > 0 || horizontalMovment < 0)
+            if (verticalMovment < 0)
             {
-                docFront.SetActive(false);
-                docBack.SetActive(false);
+                docFront.GetComponent<Animator>().SetBool("gehen", true);
+                if (horizontalMovment > 0 || horizontalMovment < 0)
+                {
+                    docFront.SetActive(false);
+                    docBack.SetActive(false);
+                }
+                else
+                {
+                    docFront.SetActive(true);
+                    docBack.SetActive(false);
+                    docLeft.SetActive(false);
+                    docRight.SetActive(false);
+                }
             }
-            else
+            if (horizontalMovment > 0)
             {
-                docFront.SetActive(true);
-                docBack.SetActive(false);
-                docLeft.SetActive(false);
-                docRight.SetActive(false);
-            }
-        }
-        if (horizontalMovment > 0)
-        {
-            if (verticalMovment > 0|| verticalMovment<0)
-            {
+                if (verticalMovment > 0 || verticalMovment < 0)
+                {
+                    docFront.SetActive(false);
+                    docBack.SetActive(false);
+                    docLeft.SetActive(false);
+                    docRight.SetActive(true);
+                }
                 docFront.SetActive(false);
                 docBack.SetActive(false);
                 docLeft.SetActive(false);
                 docRight.SetActive(true);
             }
-            docFront.SetActive(false);
-            docBack.SetActive(false);
-            docLeft.SetActive(false);
-            docRight.SetActive(true);
-        }
-        if (horizontalMovment < 0)
-        {
-            if (verticalMovment > 0 || verticalMovment < 0)
+            if (horizontalMovment < 0)
             {
+                if (verticalMovment > 0 || verticalMovment < 0)
+                {
+                    docFront.SetActive(false);
+                    docBack.SetActive(false);
+                    docLeft.SetActive(true);
+                    docRight.SetActive(false);
+                }
                 docFront.SetActive(false);
                 docBack.SetActive(false);
                 docLeft.SetActive(true);
                 docRight.SetActive(false);
             }
-            docFront.SetActive(false);
-            docBack.SetActive(false);
-            docLeft.SetActive(true);
-            docRight.SetActive(false);
+            if (horizontalMovment == 0 && verticalMovment == 0)
+            {
+                docFront.GetComponent<Animator>().SetBool("gehen", false);
+                docFront.SetActive(true);
+                docBack.SetActive(false);
+                docLeft.SetActive(false);
+                docRight.SetActive(false);
+            }
+            if (horizontalMovment == 0 && verticalMovment != 0)
+            {
+                docLeft.SetActive(false);
+                docRight.SetActive(false);
+            }
+            if (horizontalMovment != 0 && verticalMovment == 0)
+            {
+                docFront.SetActive(false);
+                docBack.SetActive(false);
+            }
         }
-        if (horizontalMovment == 0 && verticalMovment == 0)
-        {
-            docFront.GetComponent<Animator>().SetBool("gehen", false);
-            docFront.SetActive(true);
-            docBack.SetActive(false);
-            docLeft.SetActive(false);
-            docRight.SetActive(false);
-        }
-        if (horizontalMovment == 0 && verticalMovment != 0)
-        {
-            docLeft.SetActive(false);
-            docRight.SetActive(false);
-        }
-        if (horizontalMovment != 0 && verticalMovment == 0)
-        {
-            docFront.SetActive(false);
-            docBack.SetActive(false);
-        }
-
         if (Input.GetKeyDown(KeyCode.E) && isGrave && !isGraveOpen)
         {
             downTime = Time.time;
@@ -137,6 +140,7 @@ public class PlayerController : MonoBehaviour
                 if (Time.time < pressTime)
                 {
                     Debug.Log("interacted with grave");
+                    isDiging = false;
                 }
             }
             keyIsDown = false;
@@ -150,6 +154,7 @@ public class PlayerController : MonoBehaviour
         }
         if (isGraveNowOpen)
         {
+            isDiging = false;
             grave.GetComponent<GraveScript>().graveState = true;
         }
     }

@@ -11,7 +11,14 @@ public class GraveScript : MonoBehaviour
     [SerializeField] private GameObject itempos;
     [SerializeField] private GameObject monster;
 
-    [SerializeField] private GameObject item;
+    public GameObject item;
+
+    private bool isGrailGrave = false;
+    public bool grailGrave
+    {
+        get { return isGrailGrave; }
+        set { isGrailGrave = value; }
+    }
     
     private bool playIsOnGrave = false;
 
