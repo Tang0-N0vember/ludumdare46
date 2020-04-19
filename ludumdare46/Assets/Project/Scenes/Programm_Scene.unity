@@ -230,12 +230,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05db4b60acca337459dd0398d79341ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRichGrave: 0
+  isRichGrave: 1
   isOpen: 0
   itemIsCreated: 0
+  enemyIsCreated: 0
   player: {fileID: 1007328263}
   itempos: {fileID: 749169050}
+  enemySpawnPoint: {fileID: 1138169246}
   monster: {fileID: 1505944533}
+  vampire: {fileID: 849367151796097176, guid: 2de6b5a8d4bb08249bff03fb3441d324, type: 3}
+  rat: {fileID: 3427487959615632382, guid: 23aa5f4f0d5bbb74bb38304331d55313, type: 3}
   item: {fileID: 0}
 --- !u!4 &143404156
 Transform:
@@ -249,6 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 16302489}
+  - {fileID: 1138169247}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -360,6 +365,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1007328264}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &325069133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325069134}
+  m_Layer: 0
+  m_Name: EnemySpawnPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &325069134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325069133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 639580098}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620088292
 GameObject:
@@ -497,12 +532,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05db4b60acca337459dd0398d79341ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRichGrave: 0
+  isRichGrave: 1
   isOpen: 0
   itemIsCreated: 0
+  enemyIsCreated: 0
   player: {fileID: 1007328263}
   itempos: {fileID: 749169050}
+  enemySpawnPoint: {fileID: 325069133}
   monster: {fileID: 1505944533}
+  vampire: {fileID: 849367151796097176, guid: 2de6b5a8d4bb08249bff03fb3441d324, type: 3}
+  rat: {fileID: 3427487959615632382, guid: 23aa5f4f0d5bbb74bb38304331d55313, type: 3}
   item: {fileID: 0}
 --- !u!4 &639580098
 Transform:
@@ -516,6 +555,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1837353106}
+  - {fileID: 325069134}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -554,8 +594,8 @@ MonoBehaviour:
     type: 3}
   HintItem: {fileID: 5922980475055230102, guid: 349ef0614ea2b194c9f516447ef10b9c,
     type: 3}
-  LegItem: {fileID: 5922980475055230102, guid: 6b2b5c054b05a9145875641a1c6a4922, type: 3}
-  ArmItem: {fileID: 5922980475055230102, guid: 05cb2161a535a2543ba81f3373f85033, type: 3}
+  LegItem: {fileID: 5922980475055230102, guid: 35f81e37620541d4a824db1c1d9fd9dd, type: 3}
+  ArmItem: {fileID: 5922980475055230102, guid: e7cd68c01e8b62041b80194c345f47dc, type: 3}
   HeadItem: {fileID: 5922980475055230102, guid: 5ffb9de3777600341bb9d9b06b2545d3,
     type: 3}
   BrainItem: {fileID: 5922980475055230102, guid: c5c58595cd29e2f4095b68a749663df6,
@@ -688,6 +728,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &760379362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760379363}
+  m_Layer: 0
+  m_Name: EnemySpawnPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &760379363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760379362}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1437114363}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &924592425 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3017396084135212165, guid: fbde74e807cefc94ca74f9b103b6ce39,
@@ -799,6 +869,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1138169246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138169247}
+  m_Layer: 0
+  m_Name: EnemySpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138169247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138169246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 143404156}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187431105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6817403602334480391, guid: a055d94f0c30d214099c0cd8e52d1e17,
@@ -864,9 +964,13 @@ MonoBehaviour:
   isRichGrave: 0
   isOpen: 0
   itemIsCreated: 0
+  enemyIsCreated: 0
   player: {fileID: 1007328263}
   itempos: {fileID: 749169050}
+  enemySpawnPoint: {fileID: 1529560398}
   monster: {fileID: 1505944533}
+  vampire: {fileID: 849367151796097176, guid: 2de6b5a8d4bb08249bff03fb3441d324, type: 3}
+  rat: {fileID: 3427487959615632382, guid: 23aa5f4f0d5bbb74bb38304331d55313, type: 3}
   item: {fileID: 0}
 --- !u!4 &1209772926
 Transform:
@@ -880,6 +984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 620088293}
+  - {fileID: 1529560399}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1023,9 +1128,13 @@ MonoBehaviour:
   isRichGrave: 1
   isOpen: 0
   itemIsCreated: 0
+  enemyIsCreated: 0
   player: {fileID: 1007328263}
   itempos: {fileID: 749169050}
+  enemySpawnPoint: {fileID: 760379362}
   monster: {fileID: 1505944533}
+  vampire: {fileID: 849367151796097176, guid: 2de6b5a8d4bb08249bff03fb3441d324, type: 3}
+  rat: {fileID: 3427487959615632382, guid: 23aa5f4f0d5bbb74bb38304331d55313, type: 3}
   item: {fileID: 0}
 --- !u!4 &1437114363
 Transform:
@@ -1039,6 +1148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1945337086}
+  - {fileID: 760379363}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1217,6 +1327,36 @@ Transform:
   - {fileID: 751654714}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1529560398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1529560399}
+  m_Layer: 0
+  m_Name: EnemySpawnPoint (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1529560399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529560398}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1209772926}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596702635
 GameObject:

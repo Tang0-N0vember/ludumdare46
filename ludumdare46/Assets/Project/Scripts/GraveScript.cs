@@ -7,9 +7,13 @@ public class GraveScript : MonoBehaviour
     [SerializeField] private bool isRichGrave = false;
     [SerializeField] private bool isOpen = false;
     [SerializeField] private bool itemIsCreated = false;
+    [SerializeField] private bool enemyIsCreated = false;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject itempos;
+    [SerializeField] private GameObject enemySpawnPoint;
     [SerializeField] private GameObject monster;
+    [SerializeField] private GameObject vampire;
+    [SerializeField] private GameObject rat;
 
     public GameObject item;
 
@@ -40,13 +44,14 @@ public class GraveScript : MonoBehaviour
     }
     void Update()
     {
-        if (isOpen && !itemIsCreated)
+        if (isOpen && !itemIsCreated && !enemyIsCreated)
         {
             if (isRichGrave)
             {
                 int randomNum = Random.Range(1, 4);
                 if (randomNum == 1)
                 {
+                    creatRat();
                     Debug.Log("Rats attack");
                     int attackValue = Random.Range(10, 30);
                     Debug.Log("Damage" + attackValue);
@@ -56,6 +61,7 @@ public class GraveScript : MonoBehaviour
                 }
                 if(randomNum==2)
                 {
+                    creatVampire();
                     Debug.Log("Vimpire attack");
                     int attackValue = Random.Range(50, 70);
                     Debug.Log("Damage: " + attackValue);
@@ -75,14 +81,13 @@ public class GraveScript : MonoBehaviour
             {
                 if (Random.value >= 0.5)
                 {
+                    creatRat();
                     Debug.Log("Rats attack");
                     int attackValue = Random.Range(10, 30);
                     Debug.Log("Rats attack Value"+attackValue);
                     monster.GetComponent<BodypartStats>().takeDamage(attackValue);
                 }
                 creatItem();
-
-
             }
         }
     }
@@ -92,5 +97,19 @@ public class GraveScript : MonoBehaviour
         newItem.transform.parent = itempos.transform;
         newItem.transform.position = new Vector3(itempos.transform.position.x, itempos.transform.position.y);
         itemIsCreated = true;
+    }
+    private void creatRat()
+    {
+        GameObject newRat = Instantiate(rat);
+        newRat.transform.parent = enemySpawnPoint.transform;
+        Destroy(newRat, 3f);
+        enemyIsCreated = true;
+    }
+    private void creatVampire()
+    {
+        GameObject newVampire = Instantiate(vampire);
+        newVampire.transform.parent = enemySpawnPoint.transform;
+        newVampire.transform.position = enemySpawnPoint.transform.position;
+        enemyIsCreated = true;
     }
 }

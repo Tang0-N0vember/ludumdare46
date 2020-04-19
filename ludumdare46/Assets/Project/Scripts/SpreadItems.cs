@@ -47,11 +47,9 @@ public class SpreadItems : MonoBehaviour
         {
             if (i != randomGraveForGrail)
             {
-                int randomItem = Random.Range(1, ItemtList.Count+1);
+                int randomItem = Random.Range(0, ItemtList.Count);
                 graves[i].GetComponent<GraveScript>().item = ItemtList[randomItem];
             }
-            
         }
-        
     }
 }
