@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: cadbb42bd2e8fc6438ab31713eaea847
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3728820895274916119
+    second: monster_back_spritesheet_0
+  - first:
+      213: 3980284346990321758
+    second: monster_back_spritesheet_1
+  - first:
+      213: 3105288054532194922
+    second: monster_back_spritesheet_2
+  - first:
+      213: 6884832305384325882
+    second: monster_back_spritesheet_3
+  - first:
+      213: 2311909992325654738
+    second: monster_back_spritesheet_4
+  - first:
+      213: 1470419369937062783
+    second: monster_back_spritesheet_5
+  - first:
+      213: -8480003413733034331
+    second: monster_back_spritesheet_6
+  - first:
+      213: -8141315745962495195
+    second: monster_back_spritesheet_7
+  - first:
+      213: -2307128350438838723
+    second: monster_back_spritesheet_8
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monster_back_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 162
+        width: 226
+        height: 284
+      alignment: 9
+      pivot: {x: 0.47490487, y: 0.2022639}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56eaaf0554e7a4549889c8ba8b18ef00
+      internalID: 3728820895274916119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 270
+        width: 151
+        height: 162
+      alignment: 9
+      pivot: {x: 0.5204872, y: 0.7577956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21883773064f7e64c8936dcc6f2f38bc
+      internalID: 3980284346990321758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 159
+        width: 49
+        height: 95
+      alignment: 9
+      pivot: {x: 0.7420125, y: 0.86905485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e506fcff2b3874d9f2323a14910893
+      internalID: 3105288054532194922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 163
+        width: 51
+        height: 94
+      alignment: 9
+      pivot: {x: 0.31802666, y: 0.8455559}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04ecc8262a6fd24aa0a9d79496cfd59
+      internalID: 6884832305384325882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 71
+        width: 49
+        height: 72
+      alignment: 9
+      pivot: {x: 0.573656, y: 0.8150836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c269da14a2c7e534fa43527486e1e498
+      internalID: 2311909992325654738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 67
+        width: 49
+        height: 72
+      alignment: 9
+      pivot: {x: 0.43686628, y: 0.8222444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489c0c26d1ea3b2448a99870335dec91
+      internalID: 1470419369937062783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 41
+        width: 54
+        height: 100
+      alignment: 9
+      pivot: {x: 0.74824804, y: 0.8815375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc1e41d6ba49ff48955a435a5d042fa
+      internalID: -8480003413733034331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 50
+        width: 46
+        height: 95
+      alignment: 9
+      pivot: {x: 0.35428983, y: 0.874482}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f8062ea0b0d3d47baff198098d27d2
+      internalID: -8141315745962495195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_back_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 12
+        width: 220
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a6bf906b127ac4baacb0c7c24e3beb
+      internalID: -2307128350438838723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
