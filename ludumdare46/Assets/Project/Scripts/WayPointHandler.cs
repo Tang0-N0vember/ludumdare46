@@ -25,6 +25,11 @@ public class WayPointHandler : MonoBehaviour
     [SerializeField] private float viewDistance = 50f;
 
     private FieldOfView fieldOfView;
+    private bool seen;
+
+    [SerializeField] private float detectTimer;
+    private float currentDetectTimer;
+    [SerializeField] private float attackTimer;
 
     //private V_UnitSkeleton unitSkeleton;
     //private V_UnitAnimation unitAnimation;
@@ -36,6 +41,7 @@ public class WayPointHandler : MonoBehaviour
         Moving,
         AttackingPlayer,
         Busy,
+        Seeing,
     }
 
     private State state;
@@ -57,6 +63,9 @@ public class WayPointHandler : MonoBehaviour
         fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FieldOfView>();
         fieldOfView.SetFoV(fov);
         fieldOfView.SetViewDistance(viewDistance);
+
+        seen = false;
+        currentDetectTimer = detectTimer;
     }
 
     private void Update()
@@ -70,9 +79,14 @@ public class WayPointHandler : MonoBehaviour
                 FindTargetPlayer();
                 break;
             case State.AttackingPlayer:
+                FindTargetPlayer();
                 AttackPlayer();
+                HandleMovement();
                 break;
             case State.Busy:
+                break;
+            case State.Seeing:
+                SeePlayer();
                 break;
         }
         //unitSkeleton.Update(Time.deltaTime);
@@ -101,11 +115,15 @@ public class WayPointHandler : MonoBehaviour
                     // Hit something
                     if (raycastHit2D.collider.gameObject.GetComponent<PlayerController>() != null)
                     {
+                        Debug.Log("HIT!");
+                        StartSeeingPlayer();
+
                         // Hit Player
-                        StartAttackingPlayer();
                     }
                     else
                     {
+                        currentDetectTimer = detectTimer;
+                        state = State.Moving;
                         // Hit something else
                     }
                 }
@@ -113,18 +131,76 @@ public class WayPointHandler : MonoBehaviour
         }
     }
 
-    public void StartAttackingPlayer()
+    private bool Detected()
     {
-        AttackPlayer();
+        if (Vector3.Distance(GetPosition(), player.transform.position) < viewDistance)
+        {
+            // Player inside viewDistance
+            Vector3 dirToPlayer = (player.transform.position - GetPosition()).normalized;
+            if (Vector3.Angle(GetAimDir(), dirToPlayer) < fov / 2f)
+            {
+                // Player inside Field of View
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(GetPosition(), dirToPlayer, viewDistance);
+                if (raycastHit2D.collider != null)
+                {
+                    // Hit something
+                    if (raycastHit2D.collider.gameObject.GetComponent<PlayerController>() != null) return true;
+                    else return false;
+                }
+                else return false;
+            }
+            else return false;
+        }
+        else return false;
     }
 
-    private void AttackPlayer()
+    public void StartSeeingPlayer()
     {
-        state = State.Busy;
+        SeePlayer();
+    }
 
+    private void SeePlayer()
+    {
         Vector3 targetPosition = player.transform.position;
         Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
         lastMoveDir = dirToTarget;
+
+        currentDetectTimer -= Time.deltaTime;
+        //animatedWalker.SetMoveVector(Vector3.zero);
+        if (currentDetectTimer <= 0f)
+        {
+            Debug.Log("WAITING");
+            currentDetectTimer = detectTimer;
+            if (Detected())
+            {
+                state = State.AttackingPlayer;
+            }
+            else state = State.Moving;
+
+        } else state = State.Seeing;
+    }
+
+    /*public void StartAttackingPlayer()
+    {
+        AttackPlayer();
+    }*/
+
+    private void AttackPlayer()
+    {
+        /*state = State.Busy;
+
+        Vector3 targetPosition = player.transform.position;
+        Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
+        lastMoveDir = dirToTarget;*/
+
+        
+
+        if (Detected())
+        {
+            state = State.AttackingPlayer;
+        }
+        else
+            state = State.Moving;
 
         /*unitAnimation.PlayAnimForced(attackUnitAnim, dirToTarget, 2f, (UnitAnim unitAnim) => {
             // Attack complete
@@ -176,6 +252,22 @@ public class WayPointHandler : MonoBehaviour
                     waitTimer = waitTimeList[waypointIndex];
                     waypointIndex = (waypointIndex + 1) % waypointList.Count;
                     state = State.Waiting;
+                }
+                break;
+            case State.AttackingPlayer:
+                Vector3 targetPosition = player.transform.position;
+                Vector3 dirToTarget = (targetPosition - GetPosition()).normalized;
+                lastMoveDir = dirToTarget;
+
+                float distanceBefore2 = Vector3.Distance(transform.position, targetPosition);
+                //animatedWalker.SetMoveVector(waypointDir);
+                transform.position = transform.position + dirToTarget * speed * Time.deltaTime;
+                float distanceAfter2 = Vector3.Distance(transform.position, targetPosition);
+
+                float arriveDistance2 = .1f;
+                if (distanceAfter2 < arriveDistance2 || distanceBefore2 <= distanceAfter2)
+                {
+                    //Dead
                 }
                 break;
         }
