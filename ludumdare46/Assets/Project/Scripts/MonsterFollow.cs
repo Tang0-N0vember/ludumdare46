@@ -11,6 +11,7 @@ public class MonsterFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player=GameObject.FindGameObjectWithTag("Player").transform;
         followSpeed = (float)gameObject.GetComponent<MonsterStats>().getCurrentMovement/50f;
     }
 

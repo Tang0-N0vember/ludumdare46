@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4229644477457950749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4229644477457950751}
+  - component: {fileID: 2361661797589096187}
+  m_Layer: 0
+  m_Name: ItemSpreader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4229644477457950751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229644477457950749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2361661797589096187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229644477457950749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd58f8080b9a4440b0eba74ad249820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graves: []
+  ItemtList: []
+  GrailItem: {fileID: 5922980475055230102, guid: 79e5304913b25704bae28b38a66e677e,
+    type: 3}
+  HintItem: {fileID: 5922980475055230102, guid: 349ef0614ea2b194c9f516447ef10b9c,
+    type: 3}
+  LegItem: {fileID: 5922980475055230102, guid: 35f81e37620541d4a824db1c1d9fd9dd, type: 3}
+  ArmItem: {fileID: 5922980475055230102, guid: e7cd68c01e8b62041b80194c345f47dc, type: 3}
+  HeadItem: {fileID: 5922980475055230102, guid: 5ffb9de3777600341bb9d9b06b2545d3,
+    type: 3}
+  BrainItem: {fileID: 5922980475055230102, guid: c5c58595cd29e2f4095b68a749663df6,
+    type: 3}
+  HartItem: {fileID: 5922980475055230102, guid: 49cfe989d3451434e8c1ccca9c471192,
+    type: 3}
+  LungItem: {fileID: 5922980475055230102, guid: 10f990a89cbae7b4fa2b2b179de8257f,
+    type: 3}
