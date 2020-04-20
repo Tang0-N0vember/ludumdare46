@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 7dba5cdd3f10cca45ae370a1590a77bb, type: 3}
-  m_Color: {r: 0.6642498, g: 0.6981132, b: 0.6487184, a: 1}
+  m_Color: {r: 0.5943396, g: 0.58335483, b: 0.372864, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 202729470979475665}
   - component: {fileID: -2160606180637625693}
   m_Layer: 0
-  m_Name: Brain
+  m_Name: Brain 2
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,4 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemType: 5
-  statPoints: 50
+  statPoints: 90

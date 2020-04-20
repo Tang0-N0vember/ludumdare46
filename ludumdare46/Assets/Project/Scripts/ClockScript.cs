@@ -7,19 +7,20 @@ public class ClockScript : MonoBehaviour
     [SerializeField] private GameObject mond;
     [SerializeField] private GameObject pivotPoint;
     [SerializeField] private GameObject logic;
+    [SerializeField] private TMPro.TextMeshProUGUI zeit;
     float interval;
     float speed;
 
     void Start()
     {
         speed = 5.0f;
-        StartCoroutine(RotateForSeconds());
+        //StartCoroutine(RotateForSeconds());
     }
 
     void Update()
     {
-
-        //mond.transform.RotateAround(pivotPoint.transform.position, Vector3.forward ,-(/*(Mathf.PI*2)/*/logic.GetComponent<GameLogic>().getMaxGameTimer)/2 *Time.deltaTime);
+        zeit.text = ((int)logic.GetComponent<GameLogic>().getCurrentGameTimer).ToString();
+        mond.transform.RotateAround(pivotPoint.transform.position, Vector3.forward ,-((Mathf.PI*70)/logic.GetComponent<GameLogic>().getMaxGameTimer)*Time.deltaTime);
 
         //Debug.Log("MONDPOSITION" + (- (logic.GetComponent<GameLogic>().getMaxGameTimer) / 2 * Time.deltaTime));
     }
