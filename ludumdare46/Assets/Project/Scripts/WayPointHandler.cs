@@ -95,10 +95,13 @@ public class WayPointHandler : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("x: "+lastMoveDir.normalized.x);
+        Debug.Log("y: " + lastMoveDir.normalized.y);
         switch (state)
         {
             default:
             case State.Waiting:
+
             case State.Moving:
                 HandleMovement();
                 HandleAnimation();
@@ -112,9 +115,11 @@ public class WayPointHandler : MonoBehaviour
             case State.Busy:
                 break;
             case State.Seeing:
+                StopAnimation();
                 SeePlayer();
                 break;
             case State.Idle:
+                StopAnimation();
                 EnemyIdle();
                 FindTargetPlayer();
                 break;
@@ -343,6 +348,14 @@ public class WayPointHandler : MonoBehaviour
                 break;
         }
     }
+    private void StopAnimation()
+    {
+        guardRight.GetComponent<Animator>().SetBool("walk", false);
+        guardBack.GetComponent<Animator>().SetBool("walk", false);
+        guardFront.GetComponent<Animator>().SetBool("walk", false);
+        guardLeft.GetComponent<Animator>().SetBool("walk", false);
+    }
+
 
     private void HandleAnimation()
     {
@@ -361,6 +374,11 @@ public class WayPointHandler : MonoBehaviour
         {
             Debug.Log("rechts gehen");
         }*/
+        guardRight.GetComponent<Animator>().SetBool("walk", true);
+        guardBack.GetComponent<Animator>().SetBool("walk", true);
+        guardFront.GetComponent<Animator>().SetBool("walk", true);
+        guardLeft.GetComponent<Animator>().SetBool("walk", true);
+
 
         if (lastMoveDir.normalized.y == 0.0)
         {
