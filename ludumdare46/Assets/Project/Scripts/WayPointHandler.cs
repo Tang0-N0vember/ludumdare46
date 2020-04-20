@@ -41,7 +41,9 @@ public class WayPointHandler : MonoBehaviour
     [SerializeField] private GameObject guardLeft;
     [SerializeField] private GameObject guardRight;
 
-    public event Action detectionAdded; 
+    public event Action detectionAdded;
+
+    private AudioSource gasp;
 
 
     //private V_UnitSkeleton unitSkeleton;
@@ -65,6 +67,7 @@ public class WayPointHandler : MonoBehaviour
 
     private void Start()
     {
+        gasp = GetComponent<AudioSource>();
         guardFront.SetActive(true);
         guardBack.SetActive(false);
         guardLeft.SetActive(false);
@@ -131,6 +134,7 @@ public class WayPointHandler : MonoBehaviour
         if(Detected())
         {
             detectionAdded?.Invoke();
+            gasp.Play();
             /*discoveredCount++;
             if (discoveredCount >= 3)
             {
