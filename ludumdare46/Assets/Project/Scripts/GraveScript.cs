@@ -14,12 +14,13 @@ public class GraveScript : MonoBehaviour
     [SerializeField] private GameObject enemySpawnPoint;
     [SerializeField] private GameObject monster;
     [SerializeField] private GameObject vampire;
-    [SerializeField] private GameObject rat;
+    [SerializeField] private GameObject rat;  
 
     public GameObject item;
 
     //Klimpf Addition
     public event Action dugUpGrave;
+    private AudioSource ratSound;
 
     private bool isGrailGrave = false;
     public bool grailGrave
@@ -43,6 +44,9 @@ public class GraveScript : MonoBehaviour
     }
     void Start()
     {
+        //Klimpf Addition
+        ratSound = GetComponent<AudioSource>();
+
         monster = GameObject.FindGameObjectWithTag("Monster");
         itempos = GameObject.FindGameObjectWithTag("ItemPos");
         //itempos = player.transform.Find("ItemPos").GetComponent<GameObject>();
@@ -59,6 +63,9 @@ public class GraveScript : MonoBehaviour
                 int randomNum = UnityEngine.Random.Range(1, 4);
                 if (randomNum == 1)
                 {
+                    //Klimpf Addition
+                    ratSound.Play();
+
                     creatRat();
                     Debug.Log("Rats attack");
                     int attackValue = UnityEngine.Random.Range(10, 30);
@@ -89,6 +96,9 @@ public class GraveScript : MonoBehaviour
             {
                 if (UnityEngine.Random.value >= 0.5)
                 {
+                    //Klimpf Addition
+                    ratSound.Play();
+
                     creatRat();
                     Debug.Log("Rats attack");
                     int attackValue = UnityEngine.Random.Range(10, 30);

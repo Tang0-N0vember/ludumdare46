@@ -22,10 +22,16 @@ public class NoteScript : MonoBehaviour
 
     private bool isPaus=false;
 
+    //Klimpf Addition
+    private AudioSource sound;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        //Klimpf Addition
+        sound = GetComponent<AudioSource>();
+
         monster = GameObject.FindGameObjectWithTag("Monster");
 
 
@@ -49,6 +55,9 @@ public class NoteScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            //Klimpf Addition
+            sound.Play();
+
             isPaus=!isPaus;
             Note.SetActive(isPaus);
             UpdateTimeScale();

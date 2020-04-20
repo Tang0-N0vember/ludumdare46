@@ -42,6 +42,7 @@ public class WayPointHandler : MonoBehaviour
     [SerializeField] private GameObject guardRight;
 
     public event Action detectionAdded;
+    public event Action caught;
 
     private AudioSource gasp;
 
@@ -332,10 +333,11 @@ public class WayPointHandler : MonoBehaviour
                 transform.position = transform.position + dirToTarget * sprintSpeed * Time.deltaTime;
                 float distanceAfter2 = Vector3.Distance(transform.position, targetPosition);
 
-                float arriveDistance2 = .1f;
+                float arriveDistance2 = 2f;
                 if (distanceAfter2 < arriveDistance2 || distanceBefore2 <= distanceAfter2)
                 {
                     //Dead
+                    caught?.Invoke();
                     Debug.Log("Dead");
                 }
                 break;

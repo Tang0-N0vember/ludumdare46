@@ -20,10 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject docLeft;
     [SerializeField] private GameObject docRight;
 
+    //Klimpf Addition
+    private AudioSource diggingSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        diggingSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -132,6 +135,9 @@ public class PlayerController : MonoBehaviour
             keyIsDown = true;
             isDiging = true;
             docFront.GetComponent<Animator>().SetBool("graben", true);
+
+            //Klimpf Addition
+            diggingSound.Play();
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
@@ -151,6 +157,9 @@ public class PlayerController : MonoBehaviour
             isGraveNowOpen = true;
             keyIsDown = false;
             docFront.GetComponent<Animator>().SetBool("graben", false);
+
+            //Klimpf Addition
+            diggingSound.Stop();
         }
         if (isGraveNowOpen)
         {
