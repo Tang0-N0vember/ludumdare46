@@ -95,8 +95,8 @@ public class WayPointHandler : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("x: "+lastMoveDir.normalized.x);
-        Debug.Log("y: " + lastMoveDir.normalized.y);
+        //Debug.Log("x: "+lastMoveDir.normalized.x);
+        //Debug.Log("y: " + lastMoveDir.normalized.y);
         switch (state)
         {
             default:
