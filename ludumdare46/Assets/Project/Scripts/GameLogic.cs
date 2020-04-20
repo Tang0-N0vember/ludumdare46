@@ -31,9 +31,21 @@ public class GameLogic : MonoBehaviour
         guard5.detectionAdded += Enemies_detectionAdded;
         guard6.detectionAdded += Enemies_detectionAdded;
         guard7.detectionAdded += Enemies_detectionAdded;
+        guard1.caught += Enemies_caught;
+        guard2.caught += Enemies_caught;
+        guard3.caught += Enemies_caught;
+        guard4.caught += Enemies_caught;
+        guard5.caught += Enemies_caught;
+        guard6.caught += Enemies_caught;
+        guard7.caught += Enemies_caught;
         grailGrave.dugUpGrave += GrailGrave_dugUpGrave;
         currentGameTimer = gameTimer;
         
+    }
+
+    private void Enemies_caught()
+    {
+        GameOver();
     }
 
     private void GrailGrave_dugUpGrave()
