@@ -88,12 +88,11 @@ public class GameLogic : MonoBehaviour
 
 
         currentGameTimer -= Time.deltaTime;
-        /*Debug.Log("TIME");
-        Debug.Log(currentGameTimer);*/
-        if(currentGameTimer <= 0f)
+        Debug.Log("TIME: "+currentGameTimer);
+        if (currentGameTimer <= 0f)
         {
-            //GameOver();
-            currentGameTimer = gameTimer;
+            GameOver();
+            //currentGameTimer = gameTimer;
 
         }
 

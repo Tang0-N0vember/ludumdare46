@@ -10,6 +10,6 @@ public class ClockScript : MonoBehaviour
     
     void Update()
     {
-        mond.transform.RotateAround(pivotPoint.transform.position, Vector3.forward ,-((Mathf.PI*2)/logic.GetComponent<GameLogic>().getMaxGameTimer)/2 *Time.deltaTime);
+        mond.transform.RotateAround(pivotPoint.transform.position, Vector3.forward ,-(/*(Mathf.PI*2)/*/logic.GetComponent<GameLogic>().getMaxGameTimer)/2 *Time.deltaTime);
     }
 }
