@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e60ed13f0f1a24947a42f1429cda268a
+      spriteID: 393ad72891523614a99d846283c7f918
       internalID: -4026073641641266995
       vertices: []
       indices: 
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3ef82f4197e61540ba8fe9794515964
+      spriteID: f2dc2382ac691c7429d60b6a25f4c60f
       internalID: -6857047923198513347
       vertices: []
       indices: 
@@ -166,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a72998cc73c1e194fa0f0675f993f25c
+      spriteID: ea27db53457eac94a84bfefcd75f96f9
       internalID: -1013617614163412291
       vertices: []
       indices: 
@@ -176,7 +176,7 @@ TextureImporter:
       name: bodenfackel_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 599
         y: 0
         width: 200
         height: 206
@@ -187,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e95ec16c3d08ffa4087e22d89569a79d
+      spriteID: 918fc8405db6a4c4e8e4dd0271429aaa
       internalID: 6001887434950293679
       vertices: []
       indices: 
