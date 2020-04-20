@@ -115,11 +115,11 @@ public class WayPointHandler : MonoBehaviour
             case State.Busy:
                 break;
             case State.Seeing:
-                StopAnimation();
+                //StopAnimation();
                 SeePlayer();
                 break;
             case State.Idle:
-                StopAnimation();
+                //StopAnimation();
                 EnemyIdle();
                 FindTargetPlayer();
                 break;
@@ -141,18 +141,11 @@ public class WayPointHandler : MonoBehaviour
         {
             detectionAdded?.Invoke();
             gasp.Play();
-            /*discoveredCount++;
-            if (discoveredCount >= 3)
-            {
-                Debug.Log("GameOver");
-            }*/
+
             currentDetectTimer = detectTimer;
             StartSeeingPlayer();
 
             // Hit Player
-        } else
-        {
-            // Hit something else
         }
     }
 
@@ -348,13 +341,13 @@ public class WayPointHandler : MonoBehaviour
                 break;
         }
     }
-    private void StopAnimation()
+    /*private void StopAnimation()
     {
         guardRight.GetComponent<Animator>().SetBool("walk", false);
         guardBack.GetComponent<Animator>().SetBool("walk", false);
         guardFront.GetComponent<Animator>().SetBool("walk", false);
         guardLeft.GetComponent<Animator>().SetBool("walk", false);
-    }
+    }*/
 
 
     private void HandleAnimation()
@@ -363,9 +356,11 @@ public class WayPointHandler : MonoBehaviour
         rechts = rechts.normalized;*/
         /*Debug.Log("Rechts");
         Debug.Log(rechts);*/
-        Debug.Log("LastMove: " + lastMoveDir);
-        Debug.Log("LastMoveX: " + lastMoveDir.normalized.x);
-        Debug.Log("LastMoveY: " + lastMoveDir.normalized.y);
+        /*Vector3 dir = lastMoveDir;
+        dir.Normalize();
+        Debug.Log("LastMove: " + dir);
+        Debug.Log("LastMoveX: " + dir.x);
+        Debug.Log("LastMoveY: " + dir.y);
         /*Debug.Log("X: ");
         Debug.Log(lastMoveDir.normalized.x);
         Debug.Log("Y: ");
@@ -382,9 +377,7 @@ public class WayPointHandler : MonoBehaviour
         guardLeft.GetComponent<Animator>().SetBool("walk", true);
         */
 
-        if (lastMoveDir.normalized.y == 0.0)
-        {
-            if (lastMoveDir.normalized.x > 0.0)
+        if (lastMoveDir.x > 0.1 && lastMoveDir.x <= 1 )
             {
                 //Debug.Log("rechts");
                 guardRight.SetActive(true);
@@ -392,7 +385,7 @@ public class WayPointHandler : MonoBehaviour
                 guardFront.SetActive(false);
                 guardLeft.SetActive(false);
             }
-            else if (lastMoveDir.normalized.x < 0.0)
+            else if (lastMoveDir.x < -0.1 && lastMoveDir.x >= -1)
             {
                 //Debug.Log("links");
                 guardLeft.SetActive(true);
@@ -400,9 +393,7 @@ public class WayPointHandler : MonoBehaviour
                 guardBack.SetActive(false);
                 guardRight.SetActive(false);
             }
-        } else if(lastMoveDir.normalized.x == 0.0)
-        {
-            if (lastMoveDir.normalized.y > 0.0)
+        if (lastMoveDir.y > 0.1 && lastMoveDir.y <= 1)
             {
                 //Debug.Log("rauf");
                 guardBack.SetActive(true);
@@ -410,7 +401,7 @@ public class WayPointHandler : MonoBehaviour
                 guardRight.SetActive(false);
                 guardFront.SetActive(false);
             }
-            else if (lastMoveDir.normalized.y < 0.0)
+            else if (lastMoveDir.y < -0.1 && lastMoveDir.y >= -1)
             {
                 //Debug.Log("runter");
                 guardFront.SetActive(true);
@@ -418,7 +409,7 @@ public class WayPointHandler : MonoBehaviour
                 guardLeft.SetActive(false);
                 guardRight.SetActive(false);
             }
-        }
+     
          
     }
 
