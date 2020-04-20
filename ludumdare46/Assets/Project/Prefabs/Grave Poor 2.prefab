@@ -219,6 +219,8 @@ MonoBehaviour:
   monster: {fileID: 1163223841860254893, guid: 107ae662f20732d42aeff8db44048f63, type: 3}
   vampire: {fileID: 849367151796097176, guid: 2de6b5a8d4bb08249bff03fb3441d324, type: 3}
   rat: {fileID: 3427487959615632382, guid: 23aa5f4f0d5bbb74bb38304331d55313, type: 3}
+  graveOpne: {fileID: 1232459667952255926}
+  graveClose: {fileID: 1232459667488483733}
   item: {fileID: 0}
 --- !u!61 &4828707129880840308
 BoxCollider2D:

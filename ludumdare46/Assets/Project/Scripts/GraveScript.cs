@@ -14,7 +14,9 @@ public class GraveScript : MonoBehaviour
     [SerializeField] private GameObject enemySpawnPoint;
     [SerializeField] private GameObject monster;
     [SerializeField] private GameObject vampire;
-    [SerializeField] private GameObject rat;  
+    [SerializeField] private GameObject rat;
+    [SerializeField] private GameObject graveOpne;
+    [SerializeField] private GameObject graveClose;
 
     public GameObject item;
 
@@ -55,6 +57,8 @@ public class GraveScript : MonoBehaviour
     {
         if (isOpen && !itemIsCreated && !enemyIsCreated)
         {
+            graveClose.SetActive(false);
+            graveOpne.SetActive(true);
             //Klimpf Addition
             dugUpGrave?.Invoke();
 
