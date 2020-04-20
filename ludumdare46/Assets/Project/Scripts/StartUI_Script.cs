@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UI_Script : MonoBehaviour
+public class StartUI_Script : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject story;
+    [SerializeField] private GameObject startScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        story.SetActive(false);
+        startScreen.SetActive(true);
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -22,6 +22,16 @@ public class UI_Script : MonoBehaviour
         {
             ExitGame();
         }
+
+        if (Input.anyKeyDown)
+        {
+            if (startScreen.activeInHierarchy)
+            {
+
+            }
+        }
+
+        
     }
 
     public void StartGame()
