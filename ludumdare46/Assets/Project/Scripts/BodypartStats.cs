@@ -25,22 +25,27 @@ public class BodypartStats : MonoBehaviour
 
     public class MyInt
     {
-        public MyInt(int MyIntValue) => this.MyIntValue = MyIntValue;
+        public MyInt(int MyIntValue, string PartName) {
+            this.MyIntValue = MyIntValue;
+            this.PartName = PartName;
+        }
+
         public int MyIntValue { get; set; }
+        public string PartName { get; set; }
         public override string ToString() => MyIntValue.ToString();
     }
     private void Start()
     {
         BodyPartList = new List<MyInt>();
 
-        BodyPartList.Add(ArmLeft=new MyInt(startingBodyPartStat));
-        BodyPartList.Add(ArmRight = new MyInt(startingBodyPartStat));
-        BodyPartList.Add(LegLeft = new MyInt(startingBodyPartStat));
-        BodyPartList.Add(LegRight = new MyInt(startingBodyPartStat));
-        BodyPartList.Add(Head = new MyInt(startingBodyPartStat));
-        BodyPartList.Add(Lung = new MyInt(startingBodyPartStat));
-        BodyPartList.Add(Hart = new MyInt(startingBodyPartStat));
-        BodyPartList.Add(Brain = new MyInt(startingBodyPartStat));
+        BodyPartList.Add(ArmLeft=new MyInt(startingBodyPartStat,"Left Arm"));
+        BodyPartList.Add(ArmRight = new MyInt(startingBodyPartStat,"Right Arm"));
+        BodyPartList.Add(LegLeft = new MyInt(startingBodyPartStat,"Left Leg"));
+        BodyPartList.Add(LegRight = new MyInt(startingBodyPartStat,"Right Leg"));
+        BodyPartList.Add(Head = new MyInt(startingBodyPartStat,"Head"));
+        BodyPartList.Add(Lung = new MyInt(startingBodyPartStat,"Lung"));
+        BodyPartList.Add(Hart = new MyInt(startingBodyPartStat,"Hart"));
+        BodyPartList.Add(Brain = new MyInt(startingBodyPartStat,"Brain"));
     }
     private void Update()
     {
