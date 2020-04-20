@@ -4272,6 +4272,7 @@ MonoBehaviour:
   guard7: {fileID: 852901008}
   player: {fileID: 171469846}
   gameTimer: 20
+  maxDetection: 3
   grailGrave: {fileID: 0}
 --- !u!4 &792745378
 Transform:
@@ -5655,6 +5656,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4208280191218327952, guid: d7ccd1c7fa00ba04598a9bbb0478c92e,
+        type: 3}
+      propertyPath: logic
+      value: 
+      objectReference: {fileID: 792745377}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7ccd1c7fa00ba04598a9bbb0478c92e, type: 3}
 --- !u!1 &1088622193 stripped

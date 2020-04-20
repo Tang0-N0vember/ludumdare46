@@ -16,9 +16,15 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private PlayerController player;
     //[SerializeField] private
     [SerializeField] private float gameTimer;
+    [SerializeField] private int maxDetection;
     private float currentGameTimer;
     private int detectionCounter;
     public GraveScript grailGrave;
+
+    public int getDetectionCounter
+    {
+        get { return detectionCounter; }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +77,7 @@ public class GameLogic : MonoBehaviour
         detectionCounter++;
         Debug.Log("DETECTION");
         Debug.Log(detectionCounter);
-        if (detectionCounter >= 3)
+        if (detectionCounter > maxDetection)
             GameOver();
     }
 
