@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,9 @@ public class GraveScript : MonoBehaviour
     [SerializeField] private GameObject rat;
 
     public GameObject item;
+
+    //Klimpf Addition
+    public event Action dugUpGrave;
 
     private bool isGrailGrave = false;
     public bool grailGrave
@@ -47,14 +51,17 @@ public class GraveScript : MonoBehaviour
     {
         if (isOpen && !itemIsCreated && !enemyIsCreated)
         {
+            //Klimpf Addition
+            dugUpGrave?.Invoke();
+
             if (isRichGrave)
             {
-                int randomNum = Random.Range(1, 4);
+                int randomNum = UnityEngine.Random.Range(1, 4);
                 if (randomNum == 1)
                 {
                     creatRat();
                     Debug.Log("Rats attack");
-                    int attackValue = Random.Range(10, 30);
+                    int attackValue = UnityEngine.Random.Range(10, 30);
                     Debug.Log("Damage" + attackValue);
                     monster.GetComponent<BodypartStats>().takeDamage(attackValue);
 
@@ -64,9 +71,9 @@ public class GraveScript : MonoBehaviour
                 {
                     creatVampire();
                     Debug.Log("Vimpire attack");
-                    int attackValue = Random.Range(50, 70);
+                    int attackValue = UnityEngine.Random.Range(50, 70);
                     Debug.Log("Damage: " + attackValue);
-                    int vimpireHealth = Random.Range(150, 250);
+                    int vimpireHealth = UnityEngine.Random.Range(150, 250);
                     if (monster.GetComponent<BodypartStats>().vipreAttack(attackValue, vimpireHealth))
                     {
                         Debug.Log("Monster won!");
@@ -80,11 +87,11 @@ public class GraveScript : MonoBehaviour
             }
             else
             {
-                if (Random.value >= 0.5)
+                if (UnityEngine.Random.value >= 0.5)
                 {
                     creatRat();
                     Debug.Log("Rats attack");
-                    int attackValue = Random.Range(10, 30);
+                    int attackValue = UnityEngine.Random.Range(10, 30);
                     Debug.Log("Rats attack Value"+attackValue);
                     monster.GetComponent<BodypartStats>().takeDamage(attackValue);
                 }

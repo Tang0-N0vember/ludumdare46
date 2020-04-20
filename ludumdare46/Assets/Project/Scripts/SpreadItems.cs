@@ -19,7 +19,8 @@ public class SpreadItems : MonoBehaviour
     [SerializeField] private GameObject HartItem;
     [SerializeField] private GameObject LungItem;
 
-    
+    //Klimpf Addition
+    [SerializeField] private GameLogic logic;
     
     
     // Start is called before the first frame update
@@ -42,6 +43,10 @@ public class SpreadItems : MonoBehaviour
         Debug.Log("Graves: "+gravsCount);
         int randomGraveForGrail = Random.Range(0, gravsCount);
         Debug.Log("Grail Grave:"+ randomGraveForGrail);
+
+        //Klimpf Addition
+        logic.grailGrave = graves[randomGraveForGrail].GetComponent<GraveScript>();
+
         graves[randomGraveForGrail].GetComponent<GraveScript>().item = GrailItem;
         for(int i = 0; i < gravsCount; i++)
         {

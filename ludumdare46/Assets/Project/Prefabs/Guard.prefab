@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8655377100235610692}
   - component: {fileID: 8655377100235610693}
   - component: {fileID: 8655377100235610690}
-  - component: {fileID: 8655377100235610691}
   m_Layer: 2
   m_Name: Guard
   m_TagString: Untagged
@@ -115,19 +114,6 @@ MonoBehaviour:
   guardBack: {fileID: 5878285644795944378}
   guardLeft: {fileID: 4711905175907426036}
   guardRight: {fileID: 4013038437426377567}
---- !u!114 &8655377100235610691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8655377100235610694}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bdd5598606aa498a8f921161c186ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fieldOfView: {fileID: 0}
 --- !u!1001 &8655377099030195089
 PrefabInstance:
   m_ObjectHideFlags: 0

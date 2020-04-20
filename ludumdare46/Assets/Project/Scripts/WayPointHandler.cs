@@ -70,7 +70,7 @@ public class WayPointHandler : MonoBehaviour
         guardLeft.SetActive(false);
         guardRight.SetActive(false);
 
-        Debug.Log("It works");
+        //Debug.Log("It works");
         Transform bodyTransform = transform.Find("Body");
         //unitSkeleton = new V_UnitSkeleton(1f, bodyTransform.TransformPoint, (Mesh mesh) => bodyTransform.GetComponent<MeshFilter>().mesh = mesh);
         //unitAnimation = new V_UnitAnimation(unitSkeleton);
@@ -130,12 +130,12 @@ public class WayPointHandler : MonoBehaviour
     {
         if(Detected())
         {
-
-            discoveredCount++;
+            detectionAdded?.Invoke();
+            /*discoveredCount++;
             if (discoveredCount >= 3)
             {
                 Debug.Log("GameOver");
-            }
+            }*/
             currentDetectTimer = detectTimer;
             StartSeeingPlayer();
 
@@ -342,21 +342,21 @@ public class WayPointHandler : MonoBehaviour
     {
         Vector3 rechts = new Vector3(1.0f, 0.0f, 0.0f);
         rechts = rechts.normalized;
-        Debug.Log("Rechts");
+        /*Debug.Log("Rechts");
         Debug.Log(rechts);
         Debug.Log("LastMove");
-        Debug.Log(lastMoveDir);
+        Debug.Log(lastMoveDir);*/
         /*Debug.Log("X: ");
         Debug.Log(lastMoveDir.normalized.x);
         Debug.Log("Y: ");
         Debug.Log(lastMoveDir.normalized.y);*/
 
-        if(lastMoveDir == rechts)
+        /*if(lastMoveDir == rechts)
         {
             Debug.Log("rechts gehen");
-        }
+        }*/
 
-        /*if (lastMoveDir.normalized.y == 0.0)
+        if (lastMoveDir.normalized.y == 0.0)
         {
             if (lastMoveDir.normalized.x > 0.0)
             {
@@ -392,7 +392,7 @@ public class WayPointHandler : MonoBehaviour
                 guardLeft.SetActive(false);
                 guardRight.SetActive(false);
             }
-        }*/
+        }
          
     }
 
