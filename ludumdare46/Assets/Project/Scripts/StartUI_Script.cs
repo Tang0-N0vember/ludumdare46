@@ -25,13 +25,19 @@ public class StartUI_Script : MonoBehaviour
 
         if (Input.anyKeyDown)
         {
-            if (startScreen.activeInHierarchy)
+            if (story.activeInHierarchy)
             {
-
+                StartGame();
             }
         }
 
         
+    }
+
+    public void ChangeToStory()
+    {
+        startScreen.SetActive(false);
+        story.SetActive(false);
     }
 
     public void StartGame()
