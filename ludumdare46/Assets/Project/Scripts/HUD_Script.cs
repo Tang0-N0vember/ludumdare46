@@ -22,8 +22,8 @@ public class HUD_Script : MonoBehaviour
     void Update()
     {
         movementImage.fillAmount =((100f/300f) * (float)monster.GetComponent<MonsterStats>().getCurrentMovement)/100f;
-        brainImage.fillAmount = ((100f / 200) * (float)monster.GetComponent<MonsterStats>().getCurrentBrain) / 100f;
-        bloodImage.fillAmount = ((100f / 200) * (float)monster.GetComponent<MonsterStats>().getCurrentBlood) / 100f;
-        attackImage.fillAmount = ((100f / 300) * (float)monster.GetComponent<MonsterStats>().getCurrentBrain) / 100f;
+        brainImage.fillAmount = ((100f / 200f) * (float)monster.GetComponent<MonsterStats>().getCurrentBrain) / 100f;
+        bloodImage.fillAmount = ((100f / 200f) * (float)monster.GetComponent<MonsterStats>().getCurrentBlood) / 100f;
+        attackImage.fillAmount = ((100f / 300f) * (float)monster.GetComponent<MonsterStats>().getCurrentAttack) / 100f;
     }
 }

@@ -50,12 +50,37 @@ MonoBehaviour:
   HintItem: {fileID: 5922980475055230102, guid: 349ef0614ea2b194c9f516447ef10b9c,
     type: 3}
   LegItem: {fileID: 5922980475055230102, guid: 35f81e37620541d4a824db1c1d9fd9dd, type: 3}
+  LegItem1: {fileID: 5922980475055230102, guid: c2d63b56695a10240a052c565a030bfe,
+    type: 3}
+  LegItem2: {fileID: 5922980475055230102, guid: 500a1e2357a5a2f488c771c1abb2c2a4,
+    type: 3}
   ArmItem: {fileID: 5922980475055230102, guid: e7cd68c01e8b62041b80194c345f47dc, type: 3}
+  ArmItem1: {fileID: 5922980475055230102, guid: f8898e59f9f65eb488d1e23f64eb9601,
+    type: 3}
+  ArmItem2: {fileID: 5922980475055230102, guid: 290b4e97453c5ff49b2d30c41ea32261,
+    type: 3}
   HeadItem: {fileID: 5922980475055230102, guid: 5ffb9de3777600341bb9d9b06b2545d3,
+    type: 3}
+  HeadItem1: {fileID: 5922980475055230102, guid: 99f82f417a4f0a944a0988d975216c4a,
+    type: 3}
+  HeadItem2: {fileID: 5922980475055230102, guid: ea2173deac1cd734b96417e3e57d2f3e,
     type: 3}
   BrainItem: {fileID: 5922980475055230102, guid: c5c58595cd29e2f4095b68a749663df6,
     type: 3}
+  BrainItem1: {fileID: 5922980475055230102, guid: 3417fff5eabcec8438c9f07b88bf2844,
+    type: 3}
+  BrainItem2: {fileID: 5922980475055230102, guid: b0d53d73e31a2894786b199d1068d3fd,
+    type: 3}
   HartItem: {fileID: 5922980475055230102, guid: 49cfe989d3451434e8c1ccca9c471192,
+    type: 3}
+  HartItem1: {fileID: 5922980475055230102, guid: 882af47d29ad4fe44bd0b3a7584b7e8a,
+    type: 3}
+  HartItem2: {fileID: 5922980475055230102, guid: 0b61fd61fa746a346b346b65f23d6b27,
     type: 3}
   LungItem: {fileID: 5922980475055230102, guid: 10f990a89cbae7b4fa2b2b179de8257f,
     type: 3}
+  LungItem1: {fileID: 5922980475055230102, guid: e6f12e4e5aad81149839900646ef57d4,
+    type: 3}
+  LungItem2: {fileID: 5922980475055230102, guid: 2665393bd28545641b9bd56bfea73b40,
+    type: 3}
+  logic: {fileID: 0}

@@ -13,11 +13,28 @@ public class SpreadItems : MonoBehaviour
 
     [Header("Body Parts")]
     [SerializeField] private GameObject LegItem;
+    [SerializeField] private GameObject LegItem1;
+    [SerializeField] private GameObject LegItem2;
+
     [SerializeField] private GameObject ArmItem;
+    [SerializeField] private GameObject ArmItem1;
+    [SerializeField] private GameObject ArmItem2;
+
     [SerializeField] private GameObject HeadItem;
+    [SerializeField] private GameObject HeadItem1;
+    [SerializeField] private GameObject HeadItem2;
+
     [SerializeField] private GameObject BrainItem;
+    [SerializeField] private GameObject BrainItem1;
+    [SerializeField] private GameObject BrainItem2;
+
     [SerializeField] private GameObject HartItem;
+    [SerializeField] private GameObject HartItem1;
+    [SerializeField] private GameObject HartItem2;
+
     [SerializeField] private GameObject LungItem;
+    [SerializeField] private GameObject LungItem1;
+    [SerializeField] private GameObject LungItem2;
 
     //Klimpf Addition
     [SerializeField] private GameLogic logic;

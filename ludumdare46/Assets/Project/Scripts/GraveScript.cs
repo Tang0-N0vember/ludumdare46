@@ -72,7 +72,7 @@ public class GraveScript : MonoBehaviour
 
                     creatRat();
                     Debug.Log("Rats attack");
-                    int attackValue = UnityEngine.Random.Range(10, 30);
+                    int attackValue = UnityEngine.Random.Range(1, 10);
                     Debug.Log("Damage" + attackValue);
                     monster.GetComponent<BodypartStats>().takeDamage(attackValue);
                     monster.GetComponent<MonsterFollow>().hitRight();
@@ -82,9 +82,9 @@ public class GraveScript : MonoBehaviour
                 {
                     creatVampire();
                     Debug.Log("Vimpire attack");
-                    int attackValue = UnityEngine.Random.Range(50, 70);
+                    int attackValue = UnityEngine.Random.Range(30, 50);
                     Debug.Log("Damage: " + attackValue);
-                    int vimpireHealth = UnityEngine.Random.Range(150, 250);
+                    int vimpireHealth = UnityEngine.Random.Range(100, 200);
                     if (monster.GetComponent<BodypartStats>().vipreAttack(attackValue, vimpireHealth))
                     {
                         monster.GetComponent<MonsterFollow>().attackRight();
@@ -110,7 +110,7 @@ public class GraveScript : MonoBehaviour
 
                     creatRat();
                     Debug.Log("Rats attack");
-                    int attackValue = UnityEngine.Random.Range(10, 30);
+                    int attackValue = UnityEngine.Random.Range(1, 10);
                     Debug.Log("Rats attack Value"+attackValue);
                     monster.GetComponent<BodypartStats>().takeDamage(attackValue);
                     monster.GetComponent<MonsterFollow>().hitRight();
