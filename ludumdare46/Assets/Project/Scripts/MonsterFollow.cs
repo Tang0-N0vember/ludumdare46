@@ -13,6 +13,10 @@ public class MonsterFollow : MonoBehaviour
     [SerializeField] private GameObject monsterLeftAttack;
     [SerializeField] private GameObject monsterLeftHit;
 
+    private AudioSource [] sounds;
+    private AudioSource hitSound;
+    private AudioSource punchSound;
+
     private bool isFighting = false;
 
 
@@ -37,6 +41,9 @@ public class MonsterFollow : MonoBehaviour
         monsterRightAttack.SetActive(false);
         monsterRightHit.SetActive(false);
 
+        sounds = GetComponents<AudioSource>();
+        hitSound = sounds[0];
+        punchSound = sounds[1];
     }
 
     // Update is called once per frame
@@ -105,6 +112,8 @@ public class MonsterFollow : MonoBehaviour
 
     public void attackRight()
     {
+        punchSound.Play();
+
         isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
@@ -120,6 +129,8 @@ public class MonsterFollow : MonoBehaviour
     }
     public void hitRight()
     {
+        hitSound.Play();
+
         isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
@@ -135,6 +146,8 @@ public class MonsterFollow : MonoBehaviour
     }
     public void attackLeft()
     {
+        punchSound.Play();
+
         isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
@@ -150,6 +163,8 @@ public class MonsterFollow : MonoBehaviour
     }
     public void hitLeft()
     {
+        hitSound.Play();
+
         isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
