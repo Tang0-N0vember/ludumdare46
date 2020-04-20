@@ -21,6 +21,8 @@ public class GameLogic : MonoBehaviour
     private int detectionCounter;
     public GraveScript grailGrave;
 
+    [SerializeField] private BodypartStats stats;
+
     public int getDetectionCounter
     {
         get { return detectionCounter; }
@@ -46,8 +48,14 @@ public class GameLogic : MonoBehaviour
         guard7.caught += Enemies_caught;
         grailGrave.dugUpGrave += GrailGrave_dugUpGrave;
         currentGameTimer = gameTimer;
-        
+        stats.died += Stats_died;
     }
+
+    private void Stats_died()
+    {
+        GameOver();
+    }
+
     public float getCurrentGameTimer
     {
         get { return currentGameTimer; }

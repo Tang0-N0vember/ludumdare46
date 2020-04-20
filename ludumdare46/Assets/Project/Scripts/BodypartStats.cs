@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,9 @@ public class BodypartStats : MonoBehaviour
     [SerializeField] private int maxBrain=100;
 
     private bool isDead = false;
+
+    //Klimpf Addition
+    public event Action died;
 
     public MyInt ArmLeft, ArmRight, LegLeft, LegRight, Head, Lung, Hart, Brain;
 
@@ -70,6 +74,7 @@ public class BodypartStats : MonoBehaviour
             if (i.MyIntValue <= 0)
             {
                 isDead = true;
+                died?.Invoke();
                 Debug.Log("Game Over");
             }
         }
@@ -90,7 +95,7 @@ public class BodypartStats : MonoBehaviour
         }
         else
         {
-            int randomNum = Random.Range(0, 5);
+            int randomNum = UnityEngine.Random.Range(0, 5);
             BodyPartList[randomNum].MyIntValue -= damageValue;
             return false;
         }
