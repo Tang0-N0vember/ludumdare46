@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class UI_Script : MonoBehaviour
 {
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +16,7 @@ public class UI_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             ExitGame();
         }
