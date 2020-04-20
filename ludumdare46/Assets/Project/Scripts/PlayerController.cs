@@ -128,6 +128,15 @@ public class PlayerController : MonoBehaviour
                 docBack.SetActive(false);
             }
         }
+        else
+        {
+            docFront.GetComponent<Animator>().SetBool("graben", true);
+            docFront.SetActive(true);
+            docBack.SetActive(false);
+            docLeft.SetActive(false);
+            docRight.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && isGrave && !isGraveOpen)
         {
             downTime = Time.time;
@@ -157,7 +166,6 @@ public class PlayerController : MonoBehaviour
             isGraveNowOpen = true;
             keyIsDown = false;
             docFront.GetComponent<Animator>().SetBool("graben", false);
-
             //Klimpf Addition
             diggingSound.Stop();
         }
