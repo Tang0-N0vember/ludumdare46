@@ -23,6 +23,10 @@ public class GameLogic : MonoBehaviour
 
     [SerializeField] private BodypartStats stats;
 
+    private AudioSource[] sounds;
+    private AudioSource winSound;
+    private AudioSource loseSound;
+
     public int getDetectionCounter
     {
         get { return detectionCounter; }
@@ -49,11 +53,15 @@ public class GameLogic : MonoBehaviour
         grailGrave.dugUpGrave += GrailGrave_dugUpGrave;
         currentGameTimer = gameTimer;
         stats.died += Stats_died;
+
+        sounds = GetComponents<AudioSource>();
+        winSound = sounds[0];
+        loseSound = sounds[1];
     }
 
     private void Stats_died()
     {
-        GameOver();
+        StartCoroutine(LoseSound());
     }
 
     public float getCurrentGameTimer
@@ -67,17 +75,35 @@ public class GameLogic : MonoBehaviour
 
     private void Enemies_caught()
     {
+        Debug.Log("Caught");
         GameOver();
     }
 
     private void GrailGrave_dugUpGrave()
     {
-        GameWon();
+        StartCoroutine(WinSound());
+        
     }
 
     public void GameWon()
     {
         SceneManager.LoadScene(2);
+    }
+
+    IEnumerator WinSound()
+    {
+        winSound.Play();
+        Time.timeScale = 0;
+        yield return new WaitForSeconds(4);
+        Time.timeScale = 1;
+        GameWon();
+    }
+
+    IEnumerator LoseSound()
+    {
+        loseSound.Play();
+        yield return new WaitForSeconds(4);
+        GameOver();
     }
 
     private void Enemies_detectionAdded()
@@ -86,7 +112,7 @@ public class GameLogic : MonoBehaviour
         Debug.Log("DETECTION");
         Debug.Log(detectionCounter);
         if (detectionCounter > maxDetection)
-            GameOver();
+            StartCoroutine(LoseSound());
     }
 
     // Update is called once per frame
@@ -99,7 +125,7 @@ public class GameLogic : MonoBehaviour
         //Debug.Log("TIME: "+currentGameTimer);
         if (currentGameTimer <= 0f)
         {
-            GameOver();
+            StartCoroutine(LoseSound());
             //currentGameTimer = gameTimer;
 
         }
