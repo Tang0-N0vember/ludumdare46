@@ -22,7 +22,9 @@ public class GraveScript : MonoBehaviour
 
     //Klimpf Addition
     public event Action dugUpGrave;
+    private AudioSource [] sounds;
     private AudioSource ratSound;
+    private AudioSource itemSound;
 
     private bool isGrailGrave = false;
     public bool grailGrave
@@ -47,7 +49,9 @@ public class GraveScript : MonoBehaviour
     void Start()
     {
         //Klimpf Addition
-        ratSound = GetComponent<AudioSource>();
+        sounds = GetComponents<AudioSource>();
+        ratSound = sounds[0];
+        itemSound = sounds[1];
 
         monster = GameObject.FindGameObjectWithTag("Monster");
         itempos = GameObject.FindGameObjectWithTag("ItemPos");
@@ -67,8 +71,6 @@ public class GraveScript : MonoBehaviour
                 int randomNum = UnityEngine.Random.Range(1, 4);
                 if (randomNum == 1)
                 {
-                    //Klimpf Addition
-                    ratSound.Play();
 
                     creatRat();
                     Debug.Log("Rats attack");
@@ -105,8 +107,6 @@ public class GraveScript : MonoBehaviour
             {
                 if (UnityEngine.Random.value >= 0.5)
                 {
-                    //Klimpf Addition
-                    ratSound.Play();
 
                     creatRat();
                     Debug.Log("Rats attack");
@@ -116,11 +116,13 @@ public class GraveScript : MonoBehaviour
                     monster.GetComponent<MonsterFollow>().hitRight();
                 }
                 creatItem();
+                
             }
         }
     }
     private void creatItem()
     {
+        itemSound.Play();
         GameObject newItem = Instantiate(item);
         newItem.transform.parent = itempos.transform;
         newItem.transform.position = new Vector3(itempos.transform.position.x, itempos.transform.position.y);
@@ -128,6 +130,7 @@ public class GraveScript : MonoBehaviour
     }
     private void creatRat()
     {
+        ratSound.Play();
         GameObject newRat = Instantiate(rat);
         newRat.transform.parent = enemySpawnPoint.transform;
         Destroy(newRat, 3f);

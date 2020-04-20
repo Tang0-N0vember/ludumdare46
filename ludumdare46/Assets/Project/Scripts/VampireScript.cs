@@ -8,11 +8,14 @@ public class VampireScript : MonoBehaviour
     [SerializeField] private GameObject vampireAttack;
     [SerializeField] private GameObject monster;
     private Transform monsterPos;
+
+    private AudioSource vampireSound;
     // Start is called before the first frame update
     void Start()
     {
         monster = GameObject.FindGameObjectWithTag("Monster");
         monsterPos = monster.transform;
+        vampireSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class VampireScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         vampireFront.SetActive(false);
         vampireAttack.SetActive(true);
+        vampireSound.Play();
         transform.position = Vector2.MoveTowards(transform.position, monsterPos.position, 5f * Time.deltaTime);
         if (Vector2.Distance(transform.position, monsterPos.position) == 0f)
         {
