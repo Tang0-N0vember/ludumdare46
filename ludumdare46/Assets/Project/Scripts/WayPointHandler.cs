@@ -359,12 +359,13 @@ public class WayPointHandler : MonoBehaviour
 
     private void HandleAnimation()
     {
-        Vector3 rechts = new Vector3(1.0f, 0.0f, 0.0f);
-        rechts = rechts.normalized;
+        /*Vector3 rechts = new Vector3(1.0f, 0.0f, 0.0f);
+        rechts = rechts.normalized;*/
         /*Debug.Log("Rechts");
-        Debug.Log(rechts);
-        Debug.Log("LastMove");
-        Debug.Log(lastMoveDir);*/
+        Debug.Log(rechts);*/
+        Debug.Log("LastMove: " + lastMoveDir);
+        Debug.Log("LastMoveX: " + lastMoveDir.normalized.x);
+        Debug.Log("LastMoveY: " + lastMoveDir.normalized.y);
         /*Debug.Log("X: ");
         Debug.Log(lastMoveDir.normalized.x);
         Debug.Log("Y: ");
@@ -374,11 +375,12 @@ public class WayPointHandler : MonoBehaviour
         {
             Debug.Log("rechts gehen");
         }*/
+        /*
         guardRight.GetComponent<Animator>().SetBool("walk", true);
         guardBack.GetComponent<Animator>().SetBool("walk", true);
         guardFront.GetComponent<Animator>().SetBool("walk", true);
         guardLeft.GetComponent<Animator>().SetBool("walk", true);
-
+        */
 
         if (lastMoveDir.normalized.y == 0.0)
         {
