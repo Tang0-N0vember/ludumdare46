@@ -38,14 +38,14 @@ public class BodypartStats : MonoBehaviour
     {
         BodyPartList = new List<MyInt>();
 
-        BodyPartList.Add(ArmLeft=new MyInt(startingBodyPartStat,"Left Arm"));
-        BodyPartList.Add(ArmRight = new MyInt(startingBodyPartStat,"Right Arm"));
-        BodyPartList.Add(LegLeft = new MyInt(startingBodyPartStat,"Left Leg"));
-        BodyPartList.Add(LegRight = new MyInt(startingBodyPartStat,"Right Leg"));
-        BodyPartList.Add(Head = new MyInt(startingBodyPartStat,"Head"));
-        BodyPartList.Add(Lung = new MyInt(startingBodyPartStat,"Lung"));
-        BodyPartList.Add(Hart = new MyInt(startingBodyPartStat,"Hart"));
-        BodyPartList.Add(Brain = new MyInt(startingBodyPartStat,"Brain"));
+        BodyPartList.Add(ArmLeft=new MyInt(startingBodyPartStat,"left arm"));
+        BodyPartList.Add(ArmRight = new MyInt(startingBodyPartStat,"right arm"));
+        BodyPartList.Add(LegLeft = new MyInt(startingBodyPartStat,"left leg"));
+        BodyPartList.Add(LegRight = new MyInt(startingBodyPartStat,"right leg"));
+        BodyPartList.Add(Head = new MyInt(startingBodyPartStat,"head"));
+        BodyPartList.Add(Lung = new MyInt(startingBodyPartStat,"lung"));
+        BodyPartList.Add(Hart = new MyInt(startingBodyPartStat,"hart"));
+        BodyPartList.Add(Brain = new MyInt(startingBodyPartStat,"brain"));
     }
     private void Update()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class NoteScript : MonoBehaviour
 {
     private List<TMPro.TextMeshProUGUI> noteList;
+    private List<BodypartStats.MyInt> sortParts;
 
     [SerializeField] private GameObject Note;
 
@@ -18,6 +19,8 @@ public class NoteScript : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI part8;
 
     private GameObject monster;
+
+    private bool isPaus=false;
 
 
     // Start is called before the first frame update
@@ -36,18 +39,45 @@ public class NoteScript : MonoBehaviour
         noteList.Add(part7);
         noteList.Add(part8);
 
+        sortParts = new List<BodypartStats.MyInt>();
+
         Note.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            foreach(BodypartStats.MyInt part in monster.GetComponent<BodypartStats>().BodyPartList)
+            isPaus=!isPaus;
+            Note.SetActive(isPaus);
+            UpdateTimeScale();
+
+            sortParts = monster.GetComponent<BodypartStats>().BodyPartList;
+
+            sortParts.Sort((BodypartStats.MyInt a, BodypartStats.MyInt b) => { return a.MyIntValue.CompareTo(b.MyIntValue); });
+
+            for(int i = 0; i < sortParts.Count; i++)
             {
-                Debug.Log(part.GetType());
+                noteList[i].text = sortParts[i].PartName;
             }
+
+            /*
+            foreach (BodypartStats.MyInt part in monster.GetComponent<BodypartStats>().BodyPartList)
+            {
+                Debug.Log(part.PartName);
+            }*/
+        }
+    }
+    private void UpdateTimeScale()
+    {
+        if(isPaus)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
         }
     }
 }
