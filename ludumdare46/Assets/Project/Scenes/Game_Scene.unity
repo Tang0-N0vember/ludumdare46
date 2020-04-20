@@ -4221,7 +4221,7 @@ MonoBehaviour:
   guard6: {fileID: 574093157}
   guard7: {fileID: 852901008}
   player: {fileID: 171469846}
-  gameTimer: 200
+  gameTimer: 5
   maxDetection: 3
   grailGrave: {fileID: 0}
   stats: {fileID: 868275892}
