@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using V_AnimationSystem;
@@ -39,6 +40,8 @@ public class WayPointHandler : MonoBehaviour
     [SerializeField] private GameObject guardBack;
     [SerializeField] private GameObject guardLeft;
     [SerializeField] private GameObject guardRight;
+
+    public event Action detectionAdded; 
 
 
     //private V_UnitSkeleton unitSkeleton;
@@ -127,6 +130,7 @@ public class WayPointHandler : MonoBehaviour
     {
         if(Detected())
         {
+
             discoveredCount++;
             if (discoveredCount >= 3)
             {
