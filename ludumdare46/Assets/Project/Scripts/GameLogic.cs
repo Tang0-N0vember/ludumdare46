@@ -42,6 +42,14 @@ public class GameLogic : MonoBehaviour
         currentGameTimer = gameTimer;
         
     }
+    public float getCurrentGameTimer
+    {
+        get { return currentGameTimer; }
+    }
+    public float getMaxGameTimer
+    {
+        get { return gameTimer; }
+    }
 
     private void Enemies_caught()
     {
