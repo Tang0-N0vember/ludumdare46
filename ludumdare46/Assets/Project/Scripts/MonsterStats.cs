@@ -27,11 +27,12 @@ public class MonsterStats : MonoBehaviour
     }
 
     private void Start()
-    {
+    {/*
         getBrainStats();
         getBloodStats();
         getMovementStats();
         getAttackStats();
+        */
     }
     private void Update()
     {
