@@ -13,6 +13,8 @@ public class MonsterFollow : MonoBehaviour
     [SerializeField] private GameObject monsterLeftAttack;
     [SerializeField] private GameObject monsterLeftHit;
 
+    private bool isFighting = false;
+
 
     [SerializeField] private float followSpeed;
 
@@ -41,65 +43,69 @@ public class MonsterFollow : MonoBehaviour
     void Update()
     {
         followSpeed = (float)gameObject.GetComponent<MonsterStats>().getCurrentMovement/50f;
-        if (Vector2.Distance(transform.position, player.position) > 2f)
+        if (!isFighting)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, followSpeed * Time.deltaTime);
-
-
-            float xDistance = player.transform.position.x - gameObject.transform.position.x;
-            float yDistance = player.transform.position.y - gameObject.transform.position.y;
-            if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
+            if (Vector2.Distance(transform.position, player.position) > 2f)
             {
-                if (xDistance > 0)
+                transform.position = Vector2.MoveTowards(transform.position, player.position, followSpeed * Time.deltaTime);
+
+
+                float xDistance = player.transform.position.x - gameObject.transform.position.x;
+                float yDistance = player.transform.position.y - gameObject.transform.position.y;
+                if (Mathf.Abs(xDistance) > Mathf.Abs(yDistance))
                 {
-                    Debug.Log("East");
-                    monsterFront.SetActive(false);
-                    monsterBack.SetActive(false);
-                    monsterLeft.SetActive(false);
-                    monsterRight.SetActive(true);
+                    if (xDistance > 0)
+                    {
+                        Debug.Log("East");
+                        monsterFront.SetActive(false);
+                        monsterBack.SetActive(false);
+                        monsterLeft.SetActive(false);
+                        monsterRight.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("West");
+                        monsterFront.SetActive(false);
+                        monsterBack.SetActive(false);
+                        monsterLeft.SetActive(true);
+                        monsterRight.SetActive(false);
+                    }
                 }
                 else
                 {
-                    Debug.Log("West");
-                    monsterFront.SetActive(false);
-                    monsterBack.SetActive(false);
-                    monsterLeft.SetActive(true);
-                    monsterRight.SetActive(false);
+                    if (yDistance > 0)
+                    {
+                        Debug.Log("North");
+                        monsterFront.SetActive(false);
+                        monsterBack.SetActive(true);
+                        monsterLeft.SetActive(false);
+                        monsterRight.SetActive(false);
+                    }
+                    else
+                    {
+                        Debug.Log("South");
+                        monsterFront.GetComponent<Animator>().SetBool("gehen", true);
+                        monsterFront.SetActive(true);
+                        monsterBack.SetActive(false);
+                        monsterLeft.SetActive(false);
+                        monsterRight.SetActive(false);
+                    }
                 }
             }
             else
             {
-                if (yDistance > 0)
-                {
-                    Debug.Log("North");
-                    monsterFront.SetActive(false);
-                    monsterBack.SetActive(true);
-                    monsterLeft.SetActive(false);
-                    monsterRight.SetActive(false);
-                }
-                else
-                {
-                    Debug.Log("South");
-                    monsterFront.GetComponent<Animator>().SetBool("gehen", true);
-                    monsterFront.SetActive(true);
-                    monsterBack.SetActive(false);
-                    monsterLeft.SetActive(false);
-                    monsterRight.SetActive(false);
-                }
+                monsterFront.GetComponent<Animator>().SetBool("gehen", false);
+                monsterFront.SetActive(true);
+                monsterBack.SetActive(false);
+                monsterLeft.SetActive(false);
+                monsterRight.SetActive(false);
             }
-        }
-        else
-        {
-           monsterFront.GetComponent<Animator>().SetBool("gehen", false);
-            monsterFront.SetActive(true);
-            monsterBack.SetActive(false);
-            monsterLeft.SetActive(false);
-            monsterRight.SetActive(false);
         }
     }
 
     public void attackRight()
     {
+        isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
 
@@ -110,9 +116,11 @@ public class MonsterFollow : MonoBehaviour
         monsterRight.SetActive(false);
         monsterRightAttack.SetActive(true);
         monsterRightHit.SetActive(false);
+        StartCoroutine(AnimationCoroutine());
     }
     public void hitRight()
     {
+        isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
 
@@ -123,9 +131,11 @@ public class MonsterFollow : MonoBehaviour
         monsterRight.SetActive(false);
         monsterRightAttack.SetActive(false);
         monsterRightHit.SetActive(true);
+        StartCoroutine(AnimationCoroutine());
     }
     public void attackLeft()
     {
+        isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
 
@@ -136,9 +146,11 @@ public class MonsterFollow : MonoBehaviour
         monsterRight.SetActive(false);
         monsterRightAttack.SetActive(false);
         monsterRightHit.SetActive(false);
+        StartCoroutine(AnimationCoroutine());
     }
     public void hitLeft()
     {
+        isFighting = true;
         monsterFront.SetActive(false);
         monsterBack.SetActive(false);
 
@@ -149,6 +161,22 @@ public class MonsterFollow : MonoBehaviour
         monsterRight.SetActive(false);
         monsterRightAttack.SetActive(false);
         monsterRightHit.SetActive(false);
+        StartCoroutine(AnimationCoroutine());
+    }
+    IEnumerator AnimationCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        monsterFront.SetActive(false);
+        monsterBack.SetActive(false);
+
+        monsterLeft.SetActive(false);
+        monsterLeftAttack.SetActive(false);
+        monsterLeftHit.SetActive(false);
+
+        monsterRight.SetActive(false);
+        monsterRightAttack.SetActive(false);
+        monsterRightHit.SetActive(false);
+        isFighting =false;
     }
 
 

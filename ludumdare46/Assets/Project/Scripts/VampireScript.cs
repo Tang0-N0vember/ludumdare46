@@ -19,8 +19,6 @@ public class VampireScript : MonoBehaviour
     void Update()
     {
         StartCoroutine(AttackWait());
-
-        
     }
     IEnumerator AttackWait()
     {
