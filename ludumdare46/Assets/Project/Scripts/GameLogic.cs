@@ -93,9 +93,9 @@ public class GameLogic : MonoBehaviour
     IEnumerator WinSound()
     {
         winSound.Play();
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         yield return new WaitForSeconds(4);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         GameWon();
     }
 
